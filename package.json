@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +16,6 @@
   "dependencies": {
     "dotenv": "^16.4.5",
     "luxon": "^3.4.4",
-    "node-fetch": "^3.3.2"
+    "node-fetch": "^2.7.0"
   }
 }
