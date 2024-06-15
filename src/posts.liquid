@@ -1,0 +1,25 @@
+---
+layout: pages.liquid
+pagination: 
+    data: collections.post
+    size: 2
+    alias: post
+    reverse: true
+---
+
+<h1 class="title">Posts</h1>
+{% for post in posts %}
+    <article class="article">
+        <h2>{{post.title.rendered}}</h2>
+        <small>
+            <em>Posted on: {{ post.date | postDate }}</em>
+        </small>
+        <ul class="tags">
+            {%for tag in post.data.tags %}
+                {% if tag != 'post' %}
+                    <li><small>{{tag}}</small></li>
+            {% endfor %}
+        </ul>
+        <div><a href="{{ post.url | url }}" class="read-more">Read More</a></div>
+    </article>
+{% endfor %}
