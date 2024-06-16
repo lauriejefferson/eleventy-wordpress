@@ -1,16 +1,17 @@
 const markdownIt = require('markdown-it');
 const util = require('util');
 const { DateTime } = require('luxon');
+
 module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy('./src/css');
   eleventyConfig.addFilter('md', function (content = '') {
     return markdownIt({ html: true }).render(content);
   });
+
   eleventyConfig.addFilter('postDate', (dateObj) => {
-    return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toLocaleString(
-      DateTime.DATE_MED
-    );
+    return DateTime.fromISO(dateObj, { zone: 'utc' }).toFormat('LLLL dd, yyyy');
   });
+
   eleventyConfig.setFrontMatterParsingOptions({
     excerpt: true,
     excerpt_separator: '<!--excerpt-->',

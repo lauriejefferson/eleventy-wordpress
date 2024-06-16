@@ -1,0 +1,13 @@
+---
+layout: default.liquid
+---
+
+<h1 class="title">{{title}}</h1>
+
+{% for tag in tags %}
+{% if tag != 'post' %}
+<li><a href="{{ '/tags/' | url }}{{ tag }}" class="tag">{{tag}}</a></li>
+{% endif %}
+{% endfor %}
+
+{{ content }}

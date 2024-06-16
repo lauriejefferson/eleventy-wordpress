@@ -1,5 +1,9 @@
 ---
 layout: default.liquid
+pagination:
+    data: posts
+    alias: posts
+    size: 3
 ---
 
 <section class="hero">
@@ -24,18 +28,13 @@ layout: default.liquid
 <section class="posts">
     <h1 class="title">Latest Posts</h1>
     <div class="posts__container">
-        <div class="post">
-            <h2 class="post-title"></h2>
-            <p class="post-excerpt"></p>
-        </div>
-        <div class="post">
-            <h2 class="post__title"></h2>
+        {% for post in posts %}
+        <article class="post">
+            <a href="" class="post__title">{{post.title.rendered}}</a>
             <p class="post__excerpt"></p>
-        </div>
-        <div class="post">
-            <h2 class="post__title"></h2>
-            <p class="post__excerpt"></p>
-        </div>
+            <p>{{ post.date | postDate }}</p>
+        </article>
+        {% endfor %}
     </div>
 </section>
 <section class="links">

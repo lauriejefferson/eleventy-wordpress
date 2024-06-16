@@ -95,7 +95,7 @@ body {
     font-family: var(--ff-body);
 }
 
-h1 {
+h1, h2, h3, h4, h5, h6 {
     font-family: var(--ff-heading);
 }
 
@@ -143,6 +143,17 @@ section {
 
 .title {
     font-size: var(--fs-subtitle);
+}
+
+.post__title {
+    font-size: 1.125rem;
+    color: var(--clr-text);
+}
+
+.posts__container {
+    display: flex;
+    gap: 1em;
+    margin: 1em auto;
 }
 
 footer {
