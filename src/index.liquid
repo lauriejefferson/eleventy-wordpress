@@ -46,18 +46,13 @@ pagination:
 </section>
 <section class="links">
     <h1 class="title">Recent Links</h1>
-    <div class="links__container">
-        <div class="link">
-            <h2 class="link__title"></h2>
-            <p class="link__excerpt"></p>
+    <div class="flex links__container">
+        {% for link in links %}
+        <div class="links">
+            <a href="{{'link.url' | url }}" class="links__item">{{link.title}}</a>
+            <p class="links__text">{{link.description}}</p>
+            <a href="/links">View All Links</a>
         </div>
-        <div class="link">
-            <h2 class="link__title"></h2>
-            <p class="link__excerpt"></p>
-        </div>
-        <div class="link">
-            <h2 class="link__title"></h2>
-            <p class="link__excerpt"></p>
-        </div>
+        {% endfor %}
     </div>
 </section>
