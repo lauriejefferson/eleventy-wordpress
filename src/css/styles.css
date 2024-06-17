@@ -82,8 +82,8 @@ li {
     --fw-800: 800;
     --fw-900: 900;
 
-    --section-spacing: 7rem;
-    --list-spacing: 2rem;
+    --section-spacing-1: 7rem;
+    --section-spacing-2: 2rem;
     --article-spacing: 3rem;
     --flow: 1em;
 
@@ -101,6 +101,10 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--ff-heading);
+}
+
+a {
+    color: var(--clr-text);
 }
 
 .container {
@@ -137,7 +141,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 section {
-    padding: var(--section-spacing) 0;
+    padding: var(--section-spacing-1) 0;
 }
 
 .hero__title {
@@ -149,9 +153,6 @@ section {
     font-size: var(--fs-subtitle);
 }
 
-.post {
-    padding: var(--list-spacing) 0;
-}
 
 .post>*+* {
     padding: var(--flow) 0;
@@ -169,7 +170,7 @@ section {
 }
 
 .links {
-    padding: var(--list-spacing) 0;
+    padding: var(--section-spacing-2) 0;
 }
 
 .tag {
@@ -182,7 +183,7 @@ section {
 }
 
 footer {
-    padding-bottom: 1em;
+    padding: var(--article-spacing) 0;
 }
 
 footer .footer__right {
