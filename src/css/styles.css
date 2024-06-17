@@ -63,6 +63,7 @@ li {
     --clr-tag-1: #0AFFC6;
     --clr-tag-2: #FF8E0A;
     --clr-tag-3: #FE45BF;
+    --clr-tag-text: #2A574D;
 
     --ff-body: "Poppins", sans-serif;
     --fs-body: 1rem;
@@ -82,6 +83,9 @@ li {
     --fw-900: 900;
 
     --section-spacing: 7rem;
+    --list-spacing: 2rem;
+    --article-spacing: 3rem;
+    --flow: 1em;
 
 }
 
@@ -145,6 +149,14 @@ section {
     font-size: var(--fs-subtitle);
 }
 
+.post {
+    padding: var(--list-spacing) 0;
+}
+
+.post>*+* {
+    padding: var(--flow) 0;
+}
+
 .post__title {
     font-size: 1.125rem;
     color: var(--clr-text);
@@ -154,6 +166,19 @@ section {
     display: flex;
     gap: 1em;
     margin: 1em auto;
+}
+
+.links {
+    padding: var(--list-spacing) 0;
+}
+
+.tag {
+    background-color: var(--clr-tag-2);
+    color: var(--clr-tag-text);
+    margin: 1em 0;
+    padding: 0.25em 1em;
+    border: none;
+    border-radius: 15px;
 }
 
 footer {

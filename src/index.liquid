@@ -31,8 +31,15 @@ pagination:
         {% for post in posts %}
         <article class="post">
             <a href="" class="post__title">{{post.title.rendered}}</a>
-            <p class="post__excerpt"></p>
+            <p>{{ post.acf.summary }}</p>
             <p>{{ post.date | postDate }}</p>
+            {% for tag in post.tags %}
+                {% for tagName in tags %}
+                    {% if tag == tagName.id %}
+                        <small class="tag">{{ tagName.name }}</small>
+                    {%endif%}
+                {% endfor %}
+            {% endfor %}
         </article>
         {% endfor %}
     </div>
