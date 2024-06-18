@@ -1,8 +1,8 @@
 ---
-layout: default.liquid
+layout: page.liquid
 pagination:
     data: pages
-    size: 5
+    size: 1
     alias: pages
-permalink: "/{{ pages.title.rendered | slugify }}"
+permalink: "/{{ pages.slug | slugify }}/index.html"
 ---
