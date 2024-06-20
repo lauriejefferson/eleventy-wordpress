@@ -15,13 +15,13 @@ pagination:
     </div>
     <div class="hero__right">
         <div class="hero__right--one">
-            <img src="" alt="">
+            <img src="./img/mandy-henry-2Jjx-btuiMY-unsplash.jpg" alt="seashells" width="310px" height="250px">
         </div>
         <div class="hero__right--two">
-            <img src="" alt="">
+            <img src="./img/moujahed-jouini-OEh9R2Q62Xs-unsplash.jpg" alt="bags" width="310px" height="250px">
         </div>
         <div class="hero__right--three">
-            <img src="" alt="">
+            <img src="./img/thomas-martinsen-CrnALaUMSA4-unsplash.jpg" alt="image3" width="310px" height="250px">
         </div>
     </div>
 </section>
@@ -30,7 +30,7 @@ pagination:
     <div class="posts__container">
         {% for post in posts %}
         <article class="post">
-            <a href="" class="post__title">{{post.title.rendered}}</a>
+            <a href="{{ post.slug }}" class="post__title">{{post.title.rendered}}</a>
             <p>{{ post.acf.summary }}</p>
             <p>{{ post.date | postDate }}</p>
             {% for tag in post.tags %}
