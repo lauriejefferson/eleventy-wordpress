@@ -63,8 +63,7 @@ li {
     --clr-tag-1: #0AFFC6;
     --clr-tag-2: #FF8E0A;
     --clr-tag-3: #FE45BF;
-    --clr-tag-text: #2A574D;
-
+    --clr-tag-text: #522D02;
     --ff-body: "Poppins", sans-serif;
     --fs-body: 1rem;
 
@@ -106,6 +105,7 @@ h1, h2, h3, h4, h5, h6 {
 a {
     color: var(--clr-text);
 }
+
 
 .container {
     width: min(1440px, 100% - 2rem);
@@ -153,6 +153,13 @@ section {
     font-size: var(--fs-subtitle);
 }
 
+.page {
+    padding: var(--article-spacing) 0;
+}
+
+.post {
+    padding: var(--article-spacing) 0;
+}
 
 .post>*+* {
     padding: var(--flow) 0;
@@ -172,6 +179,7 @@ section {
 .links {
     padding: var(--section-spacing-2) 0;
 }
+
 
 .tag {
     background-color: var(--clr-tag-2);
