@@ -2,12 +2,26 @@
 layout: page.liquid
 pagination: 
     data: posts
-    size: 1
+    size: 5
     alias: posts
+    reverse: true
 ---
 
 {% for post in posts %}
-    <article>
+    <article class="post">
         <h2 class="title">{{ post.title.rendered}} </h2>
+        <small>{{ post.date | postDate }}</small>
+        <p>{{ post.acf.summary }}</p>
+        <div class="post__tags">
+        {% for tag in post.tags %}
+            {% for tagName in tags %}
+                {% if tag == tagName.id %}
+                    <a href="" class="tag">{{ tagName.name }}</a>
+                {%endif%}
+            {% endfor %}
+        {% endfor %}
+        </div>
+        <a href="/{{ post.slug }}/">Read more</a>
+        </div>
     </article>
 {% endfor %}

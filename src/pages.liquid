@@ -6,3 +6,9 @@ pagination:
     alias: pages
 permalink: "/{{ pages.slug | slugify }}/index.html"
 ---
+
+
+<article class="page">
+    <h1 class="title">{{pages.title.rendered}}</h1>
+    {{ pages.content.rendered }}
+</article>
