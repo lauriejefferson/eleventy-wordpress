@@ -68,9 +68,10 @@ li {
     --fs-body: 1rem;
 
     --ff-heading: "Abril Fatface", serif;
-    --fs-heading: clamp(1rem, 0.5303rem + 2.0202vw, 1.5rem);
-    --fs-title: clamp(1.5rem, 0.5303rem + 2.0202vw, 3rem);
-    --fs-subtitle: clamp(1rem, 0.5303rem + 2.0202vw, 1.8rem);
+    --fs-heading: clamp(1.5rem, 0.5303rem + 2.0202vw, 1.8rem);
+    --fs-title: clamp(2rem, 0.5303rem + 2.0202vw, 3rem);
+    --fs-section-title: clamp(1.5rem, 0.5303rem + 2.0202vw, 1.8rem);
+    --fs-post-title: clamp(1.15rem, 0.5303rem + 2.0202vw, 1.4rem);
 
     --fw-200: 200;
     --fw-300: 300;
@@ -81,10 +82,10 @@ li {
     --fw-800: 800;
     --fw-900: 900;
 
-    --section-spacing-1: 7rem;
-    --section-spacing-2: 2rem;
+    --section-spacing: 10rem;
+    --links-section-spacing: 2rem;
     --article-spacing: 3rem;
-    --flow: 1em;
+    --flow: 0.8em;
 
 }
 
@@ -140,14 +141,14 @@ a {
     color: var(--clr-tag-1);
 }
 
-section {
-    padding: var(--section-spacing-1) 0;
-}
 
 .hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+    gap: 1em;
+    width: 100%;
+    padding: var(--section-spacing) 0;
 }
 
 .hero__title {
@@ -155,24 +156,76 @@ section {
     margin-bottom: 0.5em;
 }
 
+.hero__left {
+    width: 100%;
+}
+
+.hero__right {
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
+.hero__right img {
+    background: var(--clr-photo-background);
+    padding: 2em 2em 6em 2em;
+    border: none;
+    border-radius: 7px;
+}
+
+.image1 {
+    position: absolute;
+    width: 100%;
+    top: 72px;
+    left: -430px;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    transform: rotate(-20deg);
+}
+
+.image2 {
+    position: absolute;
+    width: 100%;
+    top: -100px;
+}
+
+.image3 {
+    position: absolute;
+    width: 100%;
+    top: 200px;
+    left: 120px;
+    transform: rotate(30deg);
+}
+
 .title {
-    font-size: var(--fs-subtitle);
+    font-size: var(--fs-section-title);
 }
 
 .page {
     padding: var(--article-spacing) 0;
 }
 
+.posts {
+    margin-top: 7rem;
+    padding: var(--section-spacing) 0;
+}
+
+.posts__container {
+    display: flex;
+    justify-content: space-between;
+}
+
 .post {
     padding: var(--article-spacing) 0;
 }
 
-.post>*+* {
+.flow>*+* {
     padding: var(--flow) 0;
 }
 
 .post__title {
-    font-size: 1.4rem;
+    font-size: var(--fs-post-title);
     font-weight: var(--fw-500);
     color: var(--clr-text);
 }
@@ -184,7 +237,7 @@ section {
 }
 
 .links {
-    padding: var(--section-spacing-2) 0;
+    padding: var(--links-section-spacing) 0;
 }
 
 
