@@ -55,6 +55,7 @@ li {
     text-wrap: pretty;
 }
 
+
 :root {
     --clr-body-background: #272225;
     --clr-text: #F8F7F4;
@@ -86,6 +87,7 @@ li {
     --links-section-spacing: 2rem;
     --article-spacing: 3rem;
     --flow: 0.8em;
+    --post-flow: 0.5em;
 
 }
 
@@ -119,6 +121,11 @@ a {
     justify-content: space-between;
     align-items: center;
     margin-top: 1em;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
 }
 
 .logo {
@@ -220,6 +227,11 @@ a {
     padding: var(--article-spacing) 0;
 }
 
+.post>*+* {
+    padding: var(--post-flow) 0;
+}
+
+
 .flow>*+* {
     padding: var(--flow) 0;
 }
@@ -236,10 +248,18 @@ a {
     margin: 1em auto;
 }
 
+.article {
+    display: flex;
+    flex-direction: column;
+}
+
 .links {
     padding: var(--links-section-spacing) 0;
 }
 
+.links>*+* {
+    padding: var(--flow) 0;
+}
 
 .tag {
     background-color: var(--clr-tag-2);

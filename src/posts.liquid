@@ -8,9 +8,9 @@ pagination:
 ---
 
 {% for post in posts %}
-    <article class="post">
-        <h2 class="title">{{ post.title.rendered}} </h2>
-        <small>{{ post.date | postDate }}</small>
+    <article class="post flex-col">
+        <a href="/{{ post.slug }}/" class="title">{{ post.title.rendered}} </a>
+        <small class="date">{{ post.date | postDate }}</small>
         <p>{{ post.acf.summary }}</p>
         <div class="post__tags">
         {% for tag in post.tags %}
@@ -21,7 +21,6 @@ pagination:
             {% endfor %}
         {% endfor %}
         </div>
-        <a href="/{{ post.slug }}/">Read more</a>
         </div>
     </article>
 {% endfor %}
