@@ -1,0 +1,15 @@
+---
+layout: default.liquid
+pagination: 
+    data: posts
+    alias: post
+    size: 1
+permalink: "{{ post.slug | slugify }}/index.html"
+---
+
+<article class="post">
+<h1 class="title">{{post.title.rendered}}</h1>
+{{ post.content.rendered }}
+</article>
+
+
