@@ -3,15 +3,12 @@ title: "Links"
 layout: page.liquid
 ---
 
-
 <article class="page">
 <h1 class="title">{{title}}</h1> 
-<ul class="links">
-    {% for link in links %}
-        <li class="links__item">
-            <a href="{{ link.url | url }}">{{link.title}}</a>
-            <p class="links__text">{{link.description}}</p>
-        </li>
-    {% endfor %}
-</ul>
+{% for link in links %}
+    <div class="links flow">
+        <a href="{{ link.url | url }}">{{link.title}}</a>
+        <p class="links__text">{{link.description}}</p>
+    </div>
+{% endfor %}
 </article>

@@ -24,7 +24,7 @@ pagination:
     <div class="posts__container">
         {% for post in posts %}
         <article class="post flow">
-            <a href="{{ post.slug }}" class="post__title">{{post.title.rendered}}</a>
+            <a href="{{ post.slug }}" class="post__title accent">{{post.title.rendered}}</a>
             <p>{{ post.acf.summary }}</p>
             <p>{{ post.date | postDate }}</p>
             {% for tag in post.tags %}
@@ -42,8 +42,8 @@ pagination:
     <h1 class="title">Recent Links</h1>
     <div class="flex links__container">
         {% for link in links %}
-        <div class="links">
-            <a href="{{'link.url' | url }}" class="links__item">{{link.title}}</a>
+        <div class="links flow">
+            <a href="{{'link.url' | url }}" class="links__item accent">{{link.title}}</a>
             <p class="links__text">{{link.description}}</p>
             <a href="/links">View All Links</a>
         </div>
