@@ -159,7 +159,7 @@ a {
 
 .accent::after {
     content: "";
-    background-color: var(--clr-text);
+    background-color: var(--clr-accent);
     position: absolute;
     bottom: 0;
     left: 0;
@@ -178,6 +178,7 @@ a {
 .accent:focus::after {
     background-color: var(--clr-accent);
     width: 100%;
+
 }
 
 .hero {
