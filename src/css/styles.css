@@ -272,7 +272,7 @@ p {
 }
 
 .post__title {
-    font-size: var(--fs-post-title);
+    font-size: var(--fs-title);
     font-weight: var(--fw-500);
     color: var(--clr-text);
 }
