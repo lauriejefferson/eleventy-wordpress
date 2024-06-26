@@ -9,7 +9,7 @@ permalink: '{{ post.slug | slugify }}/index.html'
 
 {% block content %}
 <article class="post">
-  <h1 class="title">{{ post.title.rendered }}</h1>
+  <h1 class="post__title">{{ post.title.rendered }}</h1>
   <div class="post__tags">
     <small>{{ post.date | postDate }}</small>
     {% for tag in post.tags %} {% for tagName in tags %} {% if tag == tagName.id

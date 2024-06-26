@@ -43,16 +43,19 @@ pagination:
   <h1 class="title">Latest Posts</h1>
   <div class="posts__container">
     {%- for post in posts %}
-    <article class="post flow">
-      <a href="{{ post.slug }}" class="post__title accent">{{
+    <article class="post">
+      <a href="{{ post.slug }}" class="post__link accent">{{
         post.title.rendered
       }}</a>
       <p>{{ post.acf.summary }}</p>
-      <p>{{ post.date | postDate }}</p>
-      {% for tag in post.tags %} {% for tagName in tags %} {% if tag ==
-      tagName.id %}
-      <small class="tag">{{ tagName.name }}</small>
-      {%endif%} {% endfor %} {% endfor %}
+
+      <small>{{ post.date | postDate }}</small>
+      <div class="post__tags">
+        {% for tag in post.tags %} {% for tagName in tags %} {% if tag ==
+        tagName.id %}
+        <small class="tag">{{ tagName.name }}</small>
+        {%endif%} {% endfor %} {% endfor %}
+      </div>
     </article>
     {% endfor -%}
   </div>
@@ -61,7 +64,7 @@ pagination:
   <h1 class="title">Recent Links</h1>
   <div class="links__container">
     {% for link in links %}
-    <div class="links flow">
+    <div class="links">
       <a href="{{ link.url | url }}" class="links__item accent">{{
         link.title
       }}</a>
