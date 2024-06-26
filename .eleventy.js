@@ -22,8 +22,7 @@ module.exports = (eleventyConfig) => {
   });
 
   eleventyConfig.addCollection('recentPosts', function (collection) {
-    const allItems = collection.getAll()[0].data.posts;
-    return allItems;
+    return collection.getAll()[0].data.posts;
   });
 
   eleventyConfig.addCollection('recentLinks', function (collection) {

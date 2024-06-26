@@ -1,0 +1,16 @@
+---
+title: 'Links'
+layout: default.njk
+---
+
+{% block content %}
+<article class="page">
+  <h1 class="title">{{ title }}</h1>
+  {% for link in links %}
+  <div class="links flow">
+    <a href="{{ link.url | url }}">{{ link.title }}</a>
+    <p class="links__text">{{ link.description }}</p>
+  </div>
+  {% endfor %}
+</article>
+{% endblock %}

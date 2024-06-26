@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{'/css/styles.css' | url }}">
+    <title>Laurie's Digital Collection</title>
+</head>
+    <header class="flex container">
+        {% include './partials/header.njk' %}
+    </header>
+    <main class="main container">
+        {% block content %}
+        {{ content | safe }}
+        {% endblock %}
+    </main>
+    <footer class="flex container">
+        {% include './partials/footer.njk' %}
+    </footer>
+</body>
+</html>
