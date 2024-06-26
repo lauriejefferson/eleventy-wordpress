@@ -7,41 +7,43 @@ pagination:
 ---
 
 <section class="hero">
-  <div class="hero__left">
-    <h1 class="hero__title">Hi! I'm Laurie</h1>
-    <p class="hero__text">
-      Welcome to my digital collection. It's where I share some random thoughts,
-      and a list of cool links to websites. I'll also use this site to learn
-      Headless Wordpress and Eleventy.
-    </p>
-  </div>
-  <div class="hero__images">
-    <img
-      src="./img/blake-alexander-BYDFN2KkGAQ-unsplash.jpg"
-      alt="seashells"
-      width="420"
-      height="420"
-      class="hero__image--one"
-    />
-    <img
-      src="./img/thomas-martinsen-CrnALaUMSA4-unsplash.jpg"
-      alt="travelgear"
-      width="420"
-      height="420"
-      class="hero__image--two"
-    />
-    <img
-      src="./img/moujahed-jouini-OEh9R2Q62Xs-unsplash.jpg"
-      alt="bags"
-      width="420"
-      height="420"
-      class="hero__image--three"
-    />
+  <div class="container flex">
+    <div class="hero__left">
+      <h1 class="hero__title">Hi! I'm Laurie</h1>
+      <p class="hero__text">
+        Welcome to my digital collection. It's where I share some random
+        thoughts, and a list of cool links to websites. I'll also use this site
+        to learn Headless Wordpress and Eleventy.
+      </p>
+    </div>
+    <div class="hero__images">
+      <img
+        src="./img/blake-alexander-BYDFN2KkGAQ-unsplash.jpg"
+        alt="seashells"
+        width="420"
+        height="420"
+        class="hero__image--one"
+      />
+      <img
+        src="./img/thomas-martinsen-CrnALaUMSA4-unsplash.jpg"
+        alt="travelgear"
+        width="420"
+        height="420"
+        class="hero__image--two"
+      />
+      <img
+        src="./img/moujahed-jouini-OEh9R2Q62Xs-unsplash.jpg"
+        alt="bags"
+        width="420"
+        height="420"
+        class="hero__image--three"
+      />
+    </div>
   </div>
 </section>
-<section class="posts">
+<section class="posts container">
   <h1 class="title">Latest Posts</h1>
-  <div class="posts__container">
+  <div class="flex">
     {%- for post in posts %}
     <article class="post">
       <a href="{{ post.slug }}" class="post__link accent">{{
@@ -60,9 +62,9 @@ pagination:
     {% endfor -%}
   </div>
 </section>
-<section class="links">
+<section class="links container">
   <h1 class="title">Recent Links</h1>
-  <div class="links__container">
+  <div class="flex">
     {% for link in links %}
     <div class="links">
       <a href="{{ link.url | url }}" class="links__item accent">{{
@@ -70,6 +72,7 @@ pagination:
       }}</a>
       <p class="links__text">{{ link.description }}</p>
     </div>
+
     {% endfor %}
   </div>
   <a href="/links" class="accent">Get All Links</a>

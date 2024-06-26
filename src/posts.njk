@@ -8,21 +8,23 @@ pagination:
   reverse: true
 ---
 
-<article class="post flex-col">
-  <h1 class="title">{{ title }}</h1>
-  {%- for post in posts %}
-  <div class="post flex-col">
-    <a href="/{{ post.slug }}/" class="post__link"
-      >{{ post.title.rendered }}
-    </a>
-    <small class="date">{{ post.date | postDate }}</small>
-    <p>{{ post.acf.summary }}</p>
-    <div class="post__tags">
-      {% for tag in post.tags %} {% for tagName in tags %} {% if tag ==
-      tagName.id %}
-      <a href="" class="tag">{{ tagName.name }}</a>
-      {%endif%} {% endfor %} {% endfor %}
+<div class="container">
+  <article class="post">
+    <h1 class="title">{{ title }}</h1>
+    {%- for post in posts %}
+    <div class="post flex-col">
+      <a href="/{{ post.slug }}/" class="post__link"
+        >{{ post.title.rendered }}
+      </a>
+      <small class="date">{{ post.date | postDate }}</small>
+      <p>{{ post.acf.summary }}</p>
+      <div class="post__tags">
+        {% for tag in post.tags %} {% for tagName in tags %} {% if tag ==
+        tagName.id %}
+        <a href="" class="tag">{{ tagName.name }}</a>
+        {%endif%} {% endfor %} {% endfor %}
+      </div>
     </div>
-  </div>
-  {% endfor -%}
-</article>
+    {% endfor -%}
+  </article>
+</div>
