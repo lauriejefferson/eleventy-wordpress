@@ -46,9 +46,9 @@ pagination:
   <div class="flex">
     {%- for post in posts %}
     <article class="post">
-      <a href="{{ post.slug }}" class="post__link accent">{{
-        post.title.rendered
-      }}</a>
+      <h2 class="post__link">
+        <a href="{{ post.slug }}" class="accent">{{ post.title.rendered }}</a>
+      </h2>
       <p>{{ post.acf.summary }}</p>
 
       <small>{{ post.date | postDate }}</small>

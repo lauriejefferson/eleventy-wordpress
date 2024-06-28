@@ -7,8 +7,10 @@ layout: default.njk
 <article class="page container">
   <h1 class="title">{{ title }}</h1>
   {% for link in links %}
-  <div class="links flow">
-    <a href="{{ link.url | url }}">{{ link.title }}</a>
+  <div class="links">
+    <h2 class="link">
+      <a href="{{ link.url | url }}" class="accent">{{ link.title }}</a>
+    </h2>
     <p class="links__text">{{ link.description }}</p>
   </div>
   {% endfor %}

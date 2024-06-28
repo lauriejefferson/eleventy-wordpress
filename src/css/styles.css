@@ -74,11 +74,12 @@ li {
     --ff-heading: "Abril Fatface", serif;
     --ff-stye-normal: 'normal';
 
-    --fs-body: clamp(1rem, 0.5303rem + 2.0202vw, 1.15rem);
+
     --fs-heading: clamp(1.92rem, 0.5303rem + 2.0202vw, 2.5rem);
     --fs-title: clamp(1.75rem, 0.5303rem + 2.0202vw, 1.9rem);
     --fs-section-title: clamp(1.4rem, 0.5303rem + 2.0202vw, 1.6rem);
     --fs-post-title: clamp(1.25rem, 0.5303rem + 2.0202vw, 1.35rem);
+    --fs-body: clamp(1rem, 0.5303rem + 2.0202vw, 1.125rem);
 
     --fw-200: 200;
     --fw-300: 300;
@@ -90,13 +91,13 @@ li {
     --fw-900: 900;
 
     --hero-spacing: 3rem;
-    --section-spacing: 7rem;
+    --section-spacing: 12rem;
     --links-section-spacing: 2rem;
     --article-spacing: 3rem;
     --post-spacing: 2rem;
-    --flow: 0.8em;
-    --post-flow: 0.5em;
-    --p-max-width: 80%;
+    --flow: 2rem;
+    --post-flow: 0.5rem;
+    --p-max-width: 100%;
 
 }
 
@@ -116,9 +117,6 @@ a {
     color: var(--clr-text);
 }
 
-p {
-    margin: 1em 0;
-}
 
 .container {
     width: min(1440px, 100% - 2rem);
@@ -130,7 +128,6 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 1em;
 }
 
 .flex-col {
@@ -247,7 +244,7 @@ p {
 
 .title {
     font-family: var(--ff-heading);
-    font-size: var(--fs-section-title);
+    font-size: var(--fs-title);
     width: max-content;
 }
 
@@ -262,11 +259,15 @@ p {
 
 .post {
     padding: var(--article-spacing) 0;
-    width: 100%;
+}
+
+.post>p {
+    margin: 0.8em 0;
 }
 
 .flow>*+* {
     padding: var(--flow) 0;
+    width: 100%;
 }
 
 .post__title {
@@ -287,6 +288,15 @@ p {
 
 .links {
     padding: var(--links-section-spacing) 0;
+}
+
+.links>p {
+    margin: 0.8em 0;
+    width: 80%;
+}
+
+.link {
+    font-size: var(--fs-post-title);
 }
 
 .links__item {
