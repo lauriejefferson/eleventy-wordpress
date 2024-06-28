@@ -205,7 +205,7 @@ a {
 
 .hero__images {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     width: 100%;
 }
 
@@ -288,11 +288,11 @@ a {
 
 .links {
     padding: var(--links-section-spacing) 0;
+
 }
 
 .links>p {
-    margin: 0.8em 0;
-    width: 80%;
+    margin: 1em 0;
 }
 
 .link {
@@ -301,6 +301,9 @@ a {
 
 .links__item {
     font-size: var(--fs-post-title);
+    text-wrap: nowrap;
+    margin-right: 1.5em;
+
 }
 
 .tag {
