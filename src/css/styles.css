@@ -122,12 +122,6 @@ a {
     margin-inline: auto;
 }
 
-.flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2em;
-}
 
 .flex-col {
     display: flex;
@@ -191,7 +185,6 @@ a {
     line-height: 1.8;
     overflow-x: clip;
     overflow-y: visible;
-
 }
 
 .hero__title {
@@ -209,6 +202,7 @@ a {
     justify-content: flex-start;
     align-items: center;
     width: 100%;
+
 }
 
 .hero__images>img {
@@ -333,4 +327,28 @@ footer {
 .footer__right {
     display: flex;
     gap: 1em;
+}
+
+
+@media (width < 800px) {
+    .flex {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+    }
+
+    .nav {
+        justify-content: center;
+    }
+
+}
+
+@media (width > 800px) {
+    .flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2em;
+    }
+
 }
