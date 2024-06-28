@@ -121,7 +121,6 @@ a {
 .container {
     width: min(100% - 2rem, 1440px);
     margin-inline: auto;
-    padding-inline: auto;
 }
 
 .flex {
@@ -207,6 +206,7 @@ a {
 .hero__images {
     display: flex;
     justify-content: flex-start;
+    align-items: center;
     width: 100%;
 }
 
