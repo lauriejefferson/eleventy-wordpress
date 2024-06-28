@@ -190,6 +190,7 @@ a {
     background: var(--clr-hero-backaground);
     line-height: 1.8;
     overflow-x: clip;
+    overflow-y: visible;
 
 }
 
