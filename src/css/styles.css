@@ -110,7 +110,6 @@ body {
     font-family: var(--ff-body);
     font-weight: var(--fw-400);
     font-size: var(--fs-body);
-    font-style: var(--ff-stye-normal);
 }
 
 a {
@@ -190,7 +189,8 @@ a {
     padding: var(--hero-spacing) 0;
     background: var(--clr-hero-backaground);
     line-height: 1.8;
-    min-width: 100%;
+    overflow-x: clip;
+
 }
 
 .hero__title {
