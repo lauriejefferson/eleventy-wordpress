@@ -91,7 +91,7 @@ li {
     --fw-900: 900;
 
     --hero-spacing: 3rem;
-    --section-spacing: 12rem;
+    --section-spacing: 7rem;
     --links-section-spacing: 2rem;
     --article-spacing: 3rem;
     --post-spacing: 2rem;
@@ -130,8 +130,9 @@ a {
 
 .logo {
     font-family: var(--ff-heading);
-    font-size: var(--fs-title);
+    font-size: var(--fs-section-title);
     color: var(--clr-text);
+    width: 15ch;
 }
 
 .nav {
@@ -338,7 +339,8 @@ footer {
     }
 
     .nav {
-        justify-content: center;
+        justify-content: flex-start;
+
     }
 
 }

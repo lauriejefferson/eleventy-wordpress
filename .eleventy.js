@@ -1,4 +1,4 @@
-const { feedPlugin } = require('@11ty/eleventy-plugin-rss');
+const pluginRss = require('@11ty/eleventy-plugin-rss');
 const markdownIt = require('markdown-it');
 const util = require('util');
 const { DateTime } = require('luxon');
@@ -6,23 +6,7 @@ const { DateTime } = require('luxon');
 module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy('./src/css');
   eleventyConfig.addPassthroughCopy('./src/img');
-  eleventyConfig.addPlugin(feedPlugin, {
-    type: 'rss',
-    outputPath: '/rss.xml',
-    collection: {
-      name: 'posts',
-      limit: 10,
-    },
-    metadata: {
-      language: 'en',
-      title: "Laurie's Digital Collection",
-      subtitle: 'A blog about my random thoughts and cool links to websites',
-      author: {
-        name: 'Laurie Jefferson',
-        email: 'joyfulnoiseforyahshua@gmail.com',
-      },
-    },
-  });
+  eleventyConfig.addPlugin(pluginRss);
 
   eleventyConfig.addFilter('md', function (content = '') {
     return markdownIt({ html: true }).render(content);
@@ -38,11 +22,11 @@ module.exports = (eleventyConfig) => {
   });
 
   eleventyConfig.addCollection('recentPosts', function (collection) {
-    return collection.getAll()[0].data.posts;
+    return collection.getFilteredByTag('posts').reverse().slice(0, 2);
   });
 
   eleventyConfig.addCollection('recentLinks', function (collection) {
-    return collection.getFilteredByTag('post').reverse().slice(0, 2);
+    return collection.getFilteredByTag('links').reverse().slice(0, 2);
   });
 
   eleventyConfig.addFilter('dump', (obj) => {
