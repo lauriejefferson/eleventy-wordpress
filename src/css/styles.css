@@ -104,7 +104,7 @@ li {
 body {
     display: grid;
     grid-template-rows: auto 1fr auto;
-    line-height: 1.4;
+    line-height: 1.6;
     background-color: var(--clr-body-background);
     color: var(--clr-text);
     font-family: var(--ff-body);
@@ -118,7 +118,7 @@ a {
 
 
 .container {
-    width: min(100% - 2rem, 1440px);
+    width: min(100% - 2rem, 1240px);
     margin-inline: auto;
 }
 
@@ -203,7 +203,6 @@ a {
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-
 }
 
 .hero__images>img {
@@ -215,7 +214,7 @@ a {
 
 .hero__image--one {
     position: relative;
-    top: 180px;
+    top: 190px;
     left: 100px;
     right: 0;
     bottom: 0;
@@ -233,7 +232,7 @@ a {
 .hero__image--three {
     position: relative;
     top: 250px;
-    left: -330px;
+    left: -380px;
     right: 0;
     bottom: 0;
     transform: rotate(20deg);
@@ -264,7 +263,6 @@ a {
 
 .flow>*+* {
     padding: var(--flow) 0;
-    width: 100%;
 }
 
 .post__title {
@@ -335,7 +333,7 @@ footer {
     .flex {
         display: flex;
         flex-direction: column;
-        gap: 2em;
+        gap: 1em;
     }
 
     .nav {
@@ -350,7 +348,7 @@ footer {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 2em;
+        gap: 3em;
     }
 
 }
