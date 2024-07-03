@@ -74,12 +74,18 @@ li {
     --ff-heading: "Abril Fatface", serif;
     --ff-stye-normal: 'normal';
 
+    --fs-300: clamp(0.8333rem, 0.7928rem + 0.2029vw, 0.95rem);
+    --fs-400: clamp(1rem, 0.9348rem + 0.3261vw, 1.1875rem);
+    --fs-500: clamp(1.44rem, 1.2955rem + 0.7226vw, 1.8555rem);
+    --fs-600: clamp(1.728rem, 1.5223rem + 1.0284vw, 2.3193rem);
+    --fs-700: clamp(2.0736rem, 1.7864rem + 1.4358vw, 2.8992rem);
+    --fs-800: clamp(2.4883rem, 2.0933rem + 1.975vw, 3.624rem);
 
     --fs-heading: clamp(1.92rem, 0.5303rem + 2.0202vw, 2.5rem);
     --fs-title: clamp(1.75rem, 0.5303rem + 2.0202vw, 1.9rem);
     --fs-section-title: clamp(1.4rem, 0.5303rem + 2.0202vw, 1.6rem);
     --fs-post-title: clamp(1.25rem, 0.5303rem + 2.0202vw, 1.35rem);
-    --fs-body: clamp(1rem, 0.5303rem + 2.0202vw, 1.125rem);
+    --fs-body: var(--fs-400);
 
     --fw-200: 200;
     --fw-300: 300;
@@ -347,7 +353,6 @@ footer {
     .flex {
         display: flex;
         justify-content: space-between;
-        align-items: center;
         gap: 3em;
     }
 
