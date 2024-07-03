@@ -10,7 +10,7 @@
         RSS Feed |
           <xsl:value-of select="/atom:feed/atom:title"/>
         </title>
-        <link rel="stylesheet" href="/assets/styles.css"/>
+        <link rel="stylesheet" href="/css/styles.css"/>
       </head>
       <body>
         <p>
