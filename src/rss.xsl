@@ -6,37 +6,11 @@
   <xsl:template match="/">
     <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
       <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1" />
-        <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,shrink-to-fit=no" />
         <title>
         RSS Feed |
-          <xsl:value-of select="/rss/channel/title"/>
+          <xsl:value-of select="/atom:feed/atom:title"/>
         </title>
-        <style type="text/css">
-                    body {
-                        color: #222;
-                        font-family: "Segoe UI", apple-system, BlinkMacSystemFont, Futura, Roboto, Arial, system-ui, sans-serif;
-                    }
-                    .container {
-                        align-item: center;
-                        display: flex;
-                        justify-content: center;
-                    }
-                    .item {
-                        max-width: 768px;
-                    }
-                    a {
-                        color: #4166f5;
-                        text-decoration: none;
-                    }
-                    a:visited {
-                        color: #3f00ff;
-                    }
-                    a:hover {
-                        text-decoration: underline;
-                    }
-                </style>
+        <link rel="stylesheet" href="/assets/styles.css"/>
       </head>
       <body>
         <p>
@@ -45,16 +19,16 @@
         to learn more and get started. It’s free.
         </p>
         <h1>Recent blog posts</h1>
-        <xsl:for-each select="/rss/channel/item">
+        <xsl:for-each select="/atom:feed/atom:entry">
           <a>
             <xsl:attribute name="href">
-              <xsl:value-of select="link"/>
+              <xsl:value-of select="atom:link/@href"/>
             </xsl:attribute>
-            <xsl:value-of select="title"/>
+            <xsl:value-of select="atom:title"/>
           </a>
-          <xsl:value-of select="summary"/>
+          <xsl:value-of select="atom:summary"/>
         Last updated:
-          <xsl:value-of select="date" />
+          <xsl:value-of select="substring(atom:updated, 0, 11)" />
         </xsl:for-each>
       </body>
     </html>
