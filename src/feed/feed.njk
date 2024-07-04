@@ -1,12 +1,12 @@
 ---json
 {
-  "permalink": "feed.xml",
+  "permalink": "feed/feed.xml",
   "eleventyExcludeFromCollections": true,
   "metadata": {
     "title": "Laurie's Digital Collection",
     "subtitle": "A blog for my random thoughts and links to cool websites.",
     "language": "en",
-    "url": "https://eleventy-wordpress.onrender.com/",
+    "url": "http://localhost:8080",
     "author": {
       "name": "Laurie Jefferson",
       "email": "joyfulnoiseforyahshua@gmail.com"
@@ -15,6 +15,7 @@
 }
 ---
 <?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="/feed.xsl" type="text/xsl"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ metadata.url }}">
   <title>{{ metadata.title }}</title>
   <subtitle>{{ metadata.subtitle }}</subtitle>
@@ -27,13 +28,12 @@
     <email>{{ metadata.author.email }}</email>
   </author>
   {%- for post in collections.posts | reverse %}
-  {%- set absolutePostUrl = post.url | absoluteUrl(metadata.url) %}
   <entry>
     <title>{{ post.data.title }}</title>
-    <link href="{{ absolutePostUrl }}"/>
+    <link href="{{ post.url  }}"/>
     <updated>{{ post.date | dateToRfc3339 }}</updated>
-    <id>{{ absolutePostUrl }}</id>
-    <content xml:lang="{{ metadata.language }}" type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) | safe }}</content>
+    <id>{{ post.url }}</id>
+    <content xml:lang="{{ metadata.language }}" type="html">{{ post.templateContent | htmlToAbsoluteUrls(post.url) | safe }}</content>
   </entry>
   {%- endfor %}
 </feed>
