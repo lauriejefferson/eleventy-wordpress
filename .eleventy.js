@@ -4,9 +4,9 @@ const util = require('util');
 const { DateTime } = require('luxon');
 
 module.exports = (eleventyConfig) => {
+  eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPassthroughCopy('./src/css');
   eleventyConfig.addPassthroughCopy('./src/img');
-  eleventyConfig.addPlugin(pluginRss);
 
   eleventyConfig.addFilter('md', function (content = '') {
     return markdownIt({ html: true }).render(content);
