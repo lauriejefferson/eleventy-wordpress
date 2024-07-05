@@ -22,18 +22,19 @@ eleventyExcludeFromCollections: true
         to learn more and get started. It’s free.
       </p>
       </div>
-      <div class="recent-posts">
+      <div class="flex">
       <h1>Recent blog posts</h1>
       <xsl:for-each select="/atom:feed/atom:entry">
-        <xsl:value-of select="atom:summary"/>
-        Last updated:
-        <xsl:value-of select="substring(atom:updated, 0, 11)" />
-        <a>
-          <xsl:attribute name="href">
+      <a>
+         <xsl:attribute name="href">
             <xsl:value-of select="atom:link/@href"/>
           </xsl:attribute>
-          <p><xsl:value-of select="atom:content"/></p>
-        </a>
+        <xsl:value-of select="atom:title"/>
+      </a>
+        <small>Last updated:
+          <xsl:value-of select="substring(atom:updated, 0, 11)" />
+        </small>
+         <p><xsl:value-of select="atom:content"/></p>
       </xsl:for-each>
       </div>
       </body>
