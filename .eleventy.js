@@ -21,6 +21,10 @@ module.exports = (eleventyConfig) => {
     excerpt_separator: '<!--excerpt-->',
   });
 
+  eleventyConfig.addCollection('blog', function (collection) {
+    return collection.getAll().filter((item) => item.data.posts);
+  });
+
   eleventyConfig.addCollection('recentPosts', function (collection) {
     return collection.getFilteredByTag('posts').reverse().slice(0, 2);
   });

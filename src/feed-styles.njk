@@ -22,19 +22,21 @@ eleventyExcludeFromCollections: true
         to learn more and get started. It’s free.
       </p>
       </div>
-      <div>
-        <xsl:apply-templates select="atom:feed" />
-      </div>
       <div class="recent-posts">
       <h1>Recent blog posts</h1>
-      <xsl:apply-templates select="atom:feed/atom:entry" />
+      <xsl:for-each select="/atom:feed/atom:entry">
+        <xsl:value-of select="atom:summary"/>
+        Last updated:
+        <xsl:value-of select="substring(atom:updated, 0, 11)" />
+        <a>
+          <xsl:attribute name="href">
+            <xsl:value-of select="atom:link/@href"/>
+          </xsl:attribute>
+          <p><xsl:value-of select="atom:content"/></p>
+        </a>
+      </xsl:for-each>
       </div>
       </body>
     </html>
-  </xsl:template>
-
-  <xsl:template match="atom:feed">
-    <h1><xsl:value-of select="atom:title"/>'s Web Feed Preview</h1>
-    <p>This RSS feed provides the latest posts from <xsl:value-of select="atom:title"/>'s blog.</p>
   </xsl:template>
 </xsl:stylesheet>

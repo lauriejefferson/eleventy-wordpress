@@ -6,7 +6,7 @@
     "title": "Laurie's Digital Collection",
     "subtitle": "A blog for my random thoughts and links to cool websites.",
     "language": "en",
-    "url": "http://localhost:8080",
+    "url": "https://eleventy-wordpress.onrender.com",
     "author": {
       "name": "Laurie Jefferson",
       "email": "joyfulnoiseforyahshua@gmail.com"
@@ -27,13 +27,14 @@
     <name>{{ metadata.author.name }}</name>
     <email>{{ metadata.author.email }}</email>
   </author>
-  {%- for post in collections.posts | reverse %}
+  {%- for post in collections.blog | reverse %}
+  {%- set absolutePostUrl = post.url | url | absoluteUrl(metadata.url) %}
   <entry>
-    <title>{{ post.data.title }}</title>
-    <link href="{{ post.url  }}"/>
+    <title>{{ post.data.title | safe }}</title>
+    <link href="{{ absolutePostUrl }}"/>
     <updated>{{ post.date | dateToRfc3339 }}</updated>
-    <id>{{ post.url }}</id>
-    <content xml:lang="{{ metadata.language }}" type="html">{{ post.templateContent | htmlToAbsoluteUrls(post.url) | safe }}</content>
+    <id>{{ absolutePostUrl }}</id>
+    <content xml:lang="{{ metadata.language }}" type="html">{{ post.data.summary | htmlToAbsoluteUrls(post.url) | safe }}</content>
   </entry>
   {%- endfor %}
 </feed>

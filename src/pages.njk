@@ -1,5 +1,6 @@
 ---
 layout: default.njk
+eleventyExcludeFromCollections: true
 pagination:
   data: pages
   size: 1
@@ -7,7 +8,6 @@ pagination:
 permalink: '/{{ pages.slug | slugify }}/index.html'
 tags: 'pages'
 ---
-
 <article class="page container">
   <h1 class="title">{{ pages.title.rendered }}</h1>
   {{ pages.content.rendered | safe }}
