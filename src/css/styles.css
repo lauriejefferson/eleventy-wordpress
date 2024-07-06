@@ -317,6 +317,7 @@ a {
     border-radius: 15px;
 }
 
+
 footer {
     padding: var(--article-spacing) 0;
 }
@@ -354,6 +355,15 @@ footer {
         display: flex;
         justify-content: space-between;
         gap: 3em;
+    }
+
+
+    .tags-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1em;
+        padding-block: 1em;
     }
 
 }
