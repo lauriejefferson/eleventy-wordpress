@@ -142,7 +142,7 @@ a:hover {
 
 .header__intro {
     font-size: 1.3rem;
-    font-weight: var(--fw-600);
+    font-weight: var(--fw-500);
 }
 
 .atom-feed--list {
