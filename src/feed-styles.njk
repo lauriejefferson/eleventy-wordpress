@@ -15,27 +15,43 @@ eleventyExcludeFromCollections: true
       <link rel="stylesheet" href="/css/rss.css"/>
     </head>
     <body>
-      <div class="alert">
+      <div class="container">
+      <div class="alert alert-flow">
       <p>
-        <strong>This is an RSS feed</strong>. Visit
-        <a href="https://aboutfeeds.com">About Feeds</a>
+        <strong>This is an RSS feed</strong>. Subscribe by copying the URL below or from the address bar into your newsreader.
+      </p>
+      <p>https://eleventy-wordpress.onrender.com/feed/feed.xml</p>
+      <p> Visit <a href="https://aboutfeeds.com" class="about-feeds">About Feeds</a>
         to learn more and get started. It’s free.
       </p>
       </div>
       <div class="flex">
-      <h1>Recent blog posts</h1>
+      <header class="header">
+        <h1 class="header__title">RSS Feed Preview</h1>
+        <h2 class="header__intro">Laurie Jefferson</h2>
+        <p>Laurie Jefferson is a professional web developer</p>
+        <a href="https://eleventy-wordpress.onrender.com">Visit Website -></a>
+      </header>
+      <h2 class="title">Recent Blog Posts</h2>
+      <ul class="atom-feed">
       <xsl:for-each select="/atom:feed/atom:entry">
-      <a>
-         <xsl:attribute name="href">
-            <xsl:value-of select="atom:link/@href"/>
-          </xsl:attribute>
-        <xsl:value-of select="atom:title"/>
-      </a>
+      <li class="atom-feed--list">
+      <h3 class="atom-feed--link">
+        <a>
+          <xsl:attribute name="href">
+              <xsl:value-of select="atom:link/@href"/>
+            </xsl:attribute>
+          <xsl:value-of select="atom:title"/>
+        </a>
+      </h3>
         <small>Last updated:
           <xsl:value-of select="substring(atom:updated, 0, 11)" />
         </small>
          <p><xsl:value-of select="atom:content"/></p>
+      </li>
       </xsl:for-each>
+      </ul>
+      </div>
       </div>
       </body>
     </html>

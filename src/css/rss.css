@@ -1,49 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+html {
+    color-scheme: dark light;
+    hanging-punctuation: first last;
+}
+
+/* min body height */
+body {
+    min-height: 100svh;
+}
+
+/* responsive images/videos */
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+
+}
+
+/* Improved heading in supported browsers */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+
+/* improve readability with max-width on paragraphs and lists */
+/* prevent orphans in supported browsers */
+p,
+li {
+    max-width: var(--p-max-width, 65ch);
+    text-wrap: pretty;
+}
+
+:root {
+    --clr-alert-backaground: #026372;
+    --clr-text: #F8F7F4;
+
+    --ff-body: "Poppins", sans-serif;
+    --ff-heading: "Abril Fatface", serif;
+    --ff-stye-normal: 'normal';
+
+    --fw-400: 400;
+    --fw-500: 500;
+    --fw-600: 600;
+    --fw-700: 700;
+
+    --spacer-1: 0.5em;
+    --spacer-2: 1em;
+    --spacer-3: 1.5em;
+}
+
 body {
     display: block;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: var(--ff-body);
+    line-height: 1.6;
 }
 
-title {
-    display: block;
-    margin: 5px;
-    padding: 2px;
-    color: gray;
-    border-bottom: 1px solid silver;
-}
-
-link {
-    display: block;
-    font-size: small;
-    padding-left: 10px;
-}
-
-item {
-    display: block;
-    padding: 2px 30px 2px 30px;
-}
-
-docs {
-    display: block;
-    background-color: #ffffe6;
-    margin: 20px;
-    text-align: center;
-    padding: 5px;
-    color: #7f7f7f;
-    border: 1px solid silver;
-}
-
-/* all hidden elements */
-language, lastBuildDate, ttl, guid, category, description, pubDate {
-    display: none;
+h1, h2 {
+    font-family: var(--ff-heading);
 }
 
 a {
     text-decoration: none;
-    color: orangered;
+    color: var(--clr-text);
+}
+
+a:hover {
+    text-decoration: underline;
+    text-decoration-color: orangered;
+    text-decoration-thickness: 0.2rem;
+    text-underline-offset: 5px;
+}
+
+.container {
+    width: min(100% - 2rem, 800px);
+    margin-inline: auto;
 }
 
 .flex {
     display: flex;
     flex-direction: column;
+}
 
+.alert {
+    background-color: var(--clr-alert-backaground);
+    color: var(--clr-text);
+    padding: 2em;
+    margin: 1em 0;
+}
+
+.alert-flow>*+* {
+    padding-block: var(--spacer-1);
+}
+
+.about-feeds {
+    color: orangered;
+    font-weight: var(--fw-500);
+}
+
+.title {
+    font-size: 1.7rem;
+}
+
+.atom-feed {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacer-3);
+    padding-block: var(--spacer-2);
+}
+
+.header {
+    padding-block: var(--spacer-2);
+}
+
+.header__title {
+    font-size: 2rem;
+}
+
+.header__intro {
+    font-size: 1.3rem;
+    font-weight: var(--fw-600);
+}
+
+.atom-feed--list {
+    display: flex;
+    flex-direction: column;
+}
+
+.atom-feed--link {
+    font-size: 1.3rem;
 }
