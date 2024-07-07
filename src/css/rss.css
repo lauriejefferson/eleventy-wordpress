@@ -46,6 +46,13 @@ ul {
     list-style-type: none;
 }
 
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-weight: medium;
+}
 
 /* improve readability with max-width on paragraphs and lists */
 /* prevent orphans in supported browsers */
@@ -71,6 +78,8 @@ li {
     --spacer-1: 0.5em;
     --spacer-2: 1em;
     --spacer-3: 1.5em;
+
+    --p-max-width: 100%;
 }
 
 body {
@@ -96,7 +105,7 @@ a:hover {
 }
 
 .container {
-    width: min(100% - 2rem, 800px);
+    width: min(100% - 2rem, 1200px);
     margin-inline: auto;
 }
 
@@ -116,9 +125,19 @@ a:hover {
     padding-block: var(--spacer-1);
 }
 
+.rss-icon {
+    width: 48px;
+    height: 48px;
+}
+
 .about-feeds {
     color: orangered;
-    font-weight: var(--fw-500);
+}
+
+.header__intro {
+    display: flex;
+    gap: 1em;
+    padding-block: var(--spacer-1);
 }
 
 .title {

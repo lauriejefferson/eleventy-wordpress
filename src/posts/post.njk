@@ -22,7 +22,7 @@ tags: 'posts'
       <small>{{ posts.date | postDate }}</small>
       {% for tag in posts.tags %} {% for tagName in tags %} {% if tag ==
       tagName.id %}
-      <small class="tag">{{ tagName.name }}</small>
+      <a href="" class="tag">{{ tagName.name }}</a>
       {%endif%} {% endfor %} {% endfor %}
     </div>
     {{ posts.content.rendered | safe }}

@@ -9,6 +9,6 @@ permalink: '/{{ pages.slug | slugify }}/index.html'
 tags: 'pages'
 ---
 <article class="page container">
-  <h1 class="title">{{ pages.title.rendered }}</h1>
+  <h1 class="page__title">{{ pages.title.rendered }}</h1>
   {{ pages.content.rendered | safe }}
 </article>
