@@ -178,7 +178,7 @@ small {
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 2px;
+    height: 5px;
     width: 0;
     transition: width 0.2s ease 0s,
         left 0.2s ease 0s;
@@ -193,7 +193,6 @@ small {
 .accent:focus::after {
     background-color: var(--clr-accent);
     width: 100%;
-
 }
 
 .hero {
