@@ -228,6 +228,7 @@ small {
     padding: 1.8em 1.8em 5em 1.8em;
     border: none;
     border-radius: 7px;
+    height: 100%;
 }
 
 /* .hero__image--one {
