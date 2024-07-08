@@ -85,6 +85,7 @@ li {
 body {
     display: block;
     font-family: var(--ff-body);
+    font-size: 1.125rem;
     line-height: 1.6;
 }
 
@@ -105,7 +106,7 @@ a:hover {
 }
 
 .container {
-    width: min(100% - 2rem, 1200px);
+    width: min(100% - 2rem, 800px);
     margin-inline: auto;
 }
 
@@ -141,7 +142,11 @@ a:hover {
 }
 
 .title {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
+}
+
+.date {
+    font-size: 1rem;
 }
 
 .atom-feed {
@@ -156,7 +161,7 @@ a:hover {
 }
 
 .header__title {
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
 .header__intro {
