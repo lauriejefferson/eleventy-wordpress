@@ -138,6 +138,7 @@ a:hover {
 
 .header__intro {
     display: flex;
+    align-items: center;
     gap: 1em;
     padding-block: var(--spacer-1);
 }

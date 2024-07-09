@@ -34,8 +34,7 @@ eleventyExcludeFromCollections: true
               to learn more and get started. It’s free.
             </p>
           </div>
-          <div class="flex">
-            <header class="header">
+            <header class="header flex">
               <div class="header__intro">
                 <div class="header__intro--icon">
                   <svg
@@ -86,7 +85,7 @@ eleventyExcludeFromCollections: true
                 >Visit Website -></a
               >
             </header>
-            <div>
+            <div class="blog">
               <h2 class="title">Recent Blog Posts</h2>
               <ul class="atom-feed">
                 <xsl:for-each select="/atom:feed/atom:entry">
@@ -108,7 +107,6 @@ eleventyExcludeFromCollections: true
                 </xsl:for-each>
               </ul>
             </div>
-          </div>
         </div>
       </body>
     </html>
