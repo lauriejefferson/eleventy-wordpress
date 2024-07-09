@@ -13,6 +13,7 @@
 html {
     color-scheme: dark light;
     hanging-punctuation: first last;
+    font-size: 16px;
 }
 
 /* min body height */
@@ -28,7 +29,6 @@ video {
     display: block;
     max-width: 100%;
     height: auto;
-
 }
 
 /* Improved heading in supported browsers */
@@ -50,10 +50,6 @@ strong {
     font-weight: bold;
 }
 
-em {
-    font-weight: medium;
-}
-
 /* improve readability with max-width on paragraphs and lists */
 /* prevent orphans in supported browsers */
 p,
@@ -63,6 +59,7 @@ li {
 }
 
 :root {
+    --clr-body-background: #272225;
     --clr-alert-backaground: #026372;
     --clr-text: #F8F7F4;
 
@@ -85,8 +82,12 @@ li {
 body {
     display: block;
     font-family: var(--ff-body);
+    background-color: var(--clr-body-background);
+    color: var(--clr-text);
     font-size: 1.125rem;
+    text-rendering: optimizeSpeed;
     line-height: 1.6;
+    overflow: hidden;
 }
 
 h1, h2 {
@@ -128,7 +129,7 @@ a:hover {
 
 .rss-icon {
     width: 48px;
-    height: 48px;
+    /* height: 48px; */
 }
 
 .about-feeds {
