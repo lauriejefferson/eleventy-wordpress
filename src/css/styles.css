@@ -82,10 +82,7 @@ li {
     --fs-700: clamp(2.0736rem, 1.7864rem + 1.4358vw, 2.8992rem);
     --fs-800: clamp(2.4883rem, 2.0933rem + 1.975vw, 3.624rem);
 
-    --fs-heading: clamp(1.92rem, 0.5303rem + 2.0202vw, 2.5rem);
     --fs-title: clamp(1.75rem, 0.5303rem + 2.0202vw, 1.9rem);
-    --fs-section-title: clamp(1.4rem, 0.5303rem + 2.0202vw, 1.6rem);
-    --fs-post-title: clamp(1.25rem, 0.5303rem + 2.0202vw, 1.35rem);
     --fs-body: var(--fs-400);
     --fs-date: var(--fs-200);
     --fs-logo: var(--fs-500);
@@ -109,9 +106,7 @@ li {
     --links-section-spacing: 2rem;
     --links-spacing: 1.5rem;
     --article-spacing: 3rem;
-    --post-spacing: 2rem;
     --flow: 2rem;
-    --post-flow: 0.5rem;
     --p-max-width: 100%;
     --margin-spacing: 0.5em;
 
@@ -217,10 +212,17 @@ small {
 
 .hero__images {
     display: flex;
+    /* display: grid;
+    grid-column: full;
+    grid-template-columns: repeat(3, 1fr); */
+    /* overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none; */
+    /* display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: center; */
     width: 100%;
-    transform: rotate(30deg);
 }
 
 .hero__images>img {
@@ -228,7 +230,8 @@ small {
     padding: 1.8em 1.8em 5em 1.8em;
     border: none;
     border-radius: 7px;
-    height: 100%;
+    height: 420px;
+    width: 100%;
 }
 
 /* .hero__image--one {
@@ -286,7 +289,7 @@ small {
 }
 
 .flow>*+* {
-    padding: var(--flow) 0;
+    padding-block: var(--flow);
 }
 
 .post__title {
@@ -353,6 +356,25 @@ footer {
     gap: 1em;
 }
 
+.content-grid,
+.full-width {
+    display: grid;
+    grid-template-columns: [full-width-start] 100px [breakout-start] 100px [content-start] 1fr [content-end] 100px [breakout-end] 100px [full-width-end];
+}
+
+.content-grid> :not(.breakout, .full-width),
+.full-width> :not(.breakout, .full-width) {
+    grid-column: content
+}
+
+.content-grid>.breakout {
+    grid-column: breakout
+}
+
+.content-grid>.full-width {
+    grid-column: full-width
+}
+
 @media (width < 800px) {
     .flex {
         display: flex;
@@ -363,22 +385,6 @@ footer {
     .nav {
         justify-content: flex-start;
 
-    }
-
-    .hero__image--one {
-        top: 80px;
-        left: -10px;
-    }
-
-    .hero__image--two {
-        top: 10px;
-        left: -120px;
-        transform: rotate(20deg);
-    }
-
-    .hero__image--three {
-        top: 250px;
-        left: -580px;
     }
 
     .tags-container {
@@ -395,7 +401,7 @@ footer {
     .flex {
         display: flex;
         justify-content: space-between;
-        gap: 3em;
+        gap: 1em;
     }
 
     .tags-container {
@@ -408,7 +414,7 @@ footer {
 
 }
 
-@keyframes slidin {
+@keyframes slide-in {
     from {}
 
     to {}

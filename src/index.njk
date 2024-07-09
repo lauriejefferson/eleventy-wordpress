@@ -6,48 +6,65 @@ pagination:
   alias: posts
   size: 3
 ---
-<section class="hero">
-  <div class="flex container">
-    <div class="hero__intro">
-      <h1 class="hero__title">Hi! I'm Laurie</h1>
-      <p class="hero__text">
-        Welcome to my digital collection. Here is where I share some random
-        thoughts and a list of links to cool websites. I'll also use this site
-        to learn more about Headless WordPress and Eleventy.
-      </p>
-    </div>
-  <div class="hero__images">
-      <img
-        src="./img/blake-alexander-BYDFN2KkGAQ-unsplash.jpg"
-        alt="seashells"
-        width="420"
-        height="420"
-        class="hero__image--one"
-      />
-      <img
-        src="./img/thomas-martinsen-CrnALaUMSA4-unsplash.jpg"
-        alt="travelgear"
-        width="420"
-        height="420"
-        class="hero__image--two"
-      />
-      <img
-        src="./img/moujahed-jouini-OEh9R2Q62Xs-unsplash.jpg"
-        alt="bags"
-        width="420"
-        height="420"
-        class="hero__image--three"
-      />
-    </div>
+
+<section class="hero full-width content-grid">
+  <div class="hero__intro">
+    <h1 class="hero__title">Hi! I'm Laurie</h1>
+    <p class="hero__text">
+      Welcome to my digital collection. Here is where I share some random
+      thoughts and a list of links to cool websites. I'll also use this site to
+      learn more about
+      <a href="#" class="accent">Headless WordPress</a> and
+      <a href="#" class="accent">Eleventy.</a>
+    </p>
+  </div>
+  <div class="hero__images breakout">
+    <img
+      src="./img/blake-alexander-BYDFN2KkGAQ-unsplash.jpg"
+      alt="seashells"
+      width="300"
+      height="300"
+      class="hero__image--one"
+    />
+    <img
+      src="./img/blake-alexander-BYDFN2KkGAQ-unsplash.jpg"
+      alt="seashells"
+      width="300"
+      height="300"
+      class="hero__image--one"
+    />
+    <img
+      src="./img/thomas-martinsen-CrnALaUMSA4-unsplash.jpg"
+      alt="travelgear"
+      width="300"
+      height="300"
+      class="hero__image--two"
+    />
+    <img
+      src="./img/thomas-martinsen-CrnALaUMSA4-unsplash.jpg"
+      alt="travelgear"
+      width="300"
+      height="300"
+      class="hero__image--two"
+    />
+    <img
+      src="./img/moujahed-jouini-OEh9R2Q62Xs-unsplash.jpg"
+      alt="bags"
+      width="300"
+      height="300"
+      class="hero__image--three"
+    />
   </div>
 </section>
-<section class="posts container">
- <h1 class="title">Latest Posts</h1>
-  <div class="flex">
+<section class="posts">
+  <h1 class="title">Latest Posts</h1>
+  <div class="flex content-grid">
     {%- for post in posts %}
     <article class="post">
       <h2 class="post__link">
-        <a href="/posts/{{ post.slug }}" class="accent">{{ post.title.rendered }}</a>
+        <a href="/posts/{{ post.slug }}" class="accent">{{
+          post.title.rendered
+        }}</a>
       </h2>
       <p class="post__summary">{{ post.acf.summary }}</p>
       <small>{{ post.date | postDate }}</small>
@@ -61,9 +78,9 @@ pagination:
     {% endfor -%}
   </div>
 </section>
-<section class="links container">
+<section class="links">
   <h1 class="title">Recent Links</h1>
-  <div class="flex">
+  <div class="flex content-grid">
     {%- for link in links %}
     <div class="links">
       <h2 class="links__item">
@@ -75,4 +92,3 @@ pagination:
   </div>
   <a href="/links" class="accent">Get All Links</a>
 </section>
-
