@@ -8,7 +8,7 @@ pagination:
 permalink: '/{{ pages.slug | slugify }}/index.html'
 tags: 'pages'
 ---
-<article class="page container">
+<article class="page">
   <h1 class="page__title">{{ pages.title.rendered }}</h1>
   {{ pages.content.rendered | safe }}
 </article>

@@ -13,10 +13,8 @@ eleventyComputed:
   postDate: "{{ posts.date }}"
 tags: 'posts'
 ---
-
 {% block content %}
-<div class="container">
-  <article class="post">
+  <article class="post flow">
     <h1 class="post__title">{{ posts.title.rendered }}</h1>
     <div class="post__tags">
       <small>{{ posts.date | postDate }}</small>
@@ -27,5 +25,4 @@ tags: 'posts'
     </div>
     {{ posts.content.rendered | safe }}
   </article>
-</div>
 {% endblock %}

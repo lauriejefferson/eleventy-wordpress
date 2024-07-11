@@ -8,7 +8,6 @@ pagination:
 ---
 
 <section class="hero full-width content-grid">
-  <div class="hero__intro">
     <h1 class="hero__title">Hi! I'm Laurie</h1>
     <p class="hero__text">
       Welcome to my digital collection. Here is where I share some random
@@ -17,7 +16,6 @@ pagination:
       <a href="#" class="accent">Headless WordPress</a> and
       <a href="#" class="accent">Eleventy.</a>
     </p>
-  </div>
   <div class="hero__images breakout">
     <img
       src="./img/blake-alexander-BYDFN2KkGAQ-unsplash.jpg"
@@ -56,7 +54,7 @@ pagination:
     />
   </div>
 </section>
-<section class="posts">
+<section class="posts full-width content-grid">
   <h1 class="title">Latest Posts</h1>
   <div class="flex content-grid">
     {%- for post in posts %}

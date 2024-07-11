@@ -115,6 +115,10 @@ a:hover {
     flex-direction: column;
 }
 
+.flex>* {
+    flex: 1;
+}
+
 .alert {
     background-color: var(--clr-alert-backaground);
     color: var(--clr-text);
