@@ -9,13 +9,14 @@ pagination:
   reverse: true
 ---
 <div class="container">
-  <article class="post">
-    <h1 class="post__title">{{ title }}</h1>
+    <h1 class="flow">{{ title }}</h1>
     {%- for post in postsPage %}
-    <div class="post flex-col">
-      <a href="{{ post.slug }}/" class="post__link"
+    <article class="post flex-col">
+      <h2 class="post__link">
+<a href="{{ post.slug }}/" class="accent"
         >{{ post.title.rendered }}
       </a>
+      </h2>
       <small>{{ post.date | postDate }}</small>
       <p>{{ post.acf.summary }}</p>
       <div class="post__tags">
@@ -27,7 +28,6 @@ pagination:
           {% endfor -%}
       {% endfor -%}
       </div>
-    </div>
+    </article>
     {% endfor -%}
-  </article>
 </div>

@@ -26,11 +26,15 @@ module.exports = (eleventyConfig) => {
   });
 
   eleventyConfig.addCollection('recentPosts', function (collection) {
-    return collection.getFilteredByTag('posts').reverse().slice(0, 2);
+    return collection.getFilteredByTag('posts').reverse().slice(0, 3);
   });
 
   eleventyConfig.addCollection('recentLinks', function (collection) {
-    return collection.getFilteredByTag('links').reverse().slice(0, 2);
+    return collection.getFilteredByTag('links').reverse().slice(0, 3);
+  });
+
+  eleventyConfig.addFilter('debugger', function (jsonData) {
+    console.log(jsonData);
   });
 
   eleventyConfig.addFilter('dump', (obj) => {

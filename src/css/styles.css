@@ -122,6 +122,15 @@ body {
     font-size: var(--fs-body);
 }
 
+
+.flow>*+* {
+    padding-block: var(--flow);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--ff-heading);
+}
+
 a {
     color: var(--clr-text);
 }
@@ -129,6 +138,18 @@ a {
 small {
     font-size: var(--fs-300);
 }
+
+article {
+    --flow: 1rem;
+}
+
+h1 {
+    --flow: 1.5rem;
+    font-size: var(--fs-hero-title);
+    font-weight: var(--fw-500);
+
+}
+
 
 .content-grid,
 .full-width {
@@ -236,46 +257,34 @@ small {
     width: 70%;
 }
 
-.hero__images {
+.hero__gallery {
+    display: grid;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+}
+
+.hero__gallery .flex::after {
+    content: "";
+    align-self: stretch;
+    padding-inline-end: max(2rem, (100vw - 75ch)/2 - 2rem)
+}
+
+.hero__gallery--item {
+    flex-shrink: 0;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: center;
     inline-size: 100%;
+    max-inline-size: 20rem;
+    aspect-ratio: 16/9;
+    background-color: aquamarine;
+    overflow: hidden;
 }
 
-.hero__images>img {
-    background: var(--clr-photo-background);
-    padding: 1.2em 1.2em 3.5em 1.2em;
-    border: none;
-    border-radius: 7px;
-    height: 350px;
-    width: auto;
-}
 
-/* .hero__image--one {
-    position: relative;
-    top: 150px;
-    left: -10px;
-    right: 0;
-    bottom: 0;
-    transform: rotate(-25deg);
-} */
-
-/* .hero__image--two {
-    position: relative;
-    top: -40px;
-    left: -100px;
-    right: 0;
-    bottom: 0;
-    transform: rotate(15deg);
-} */
-
-/* .hero__image--three {
-    position: relative;
-    top: 250px;
-    left: -500px;
-    right: 0;
-    bottom: 0;
-    transform: rotate(25deg);
-} */
 
 .title {
     font-family: var(--ff-heading);
@@ -300,24 +309,12 @@ small {
     padding-block: var(--article-spacing);
 }
 
-/* .post>p+* {
-    padding-block: var(--flow);
-} */
 
 .post__summary {
     margin-block: 1em;
 }
 
-.flow>*+* {
-    padding-block: var(--flow);
-}
-
-.post__title {
-    font-family: var(--ff-heading);
-    font-size: var(--fs-hero-title);
-    font-weight: var(--fw-500);
-    color: var(--clr-text);
-}
+/* .post__title {} */
 
 .post__link {
     font-size: var(--fs-post-title);
@@ -358,6 +355,9 @@ small {
     border-radius: 15px;
     font-size: var(--fs-300);
 }
+
+
+
 
 footer {
     padding: var(--article-spacing) 0;

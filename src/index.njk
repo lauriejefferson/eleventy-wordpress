@@ -16,46 +16,37 @@ pagination:
       <a href="#" class="accent">Headless WordPress</a> and
       <a href="#" class="accent">Eleventy.</a>
     </p>
-  <div class="hero__images breakout">
-    <img
-      src="./img/blake-alexander-BYDFN2KkGAQ-unsplash.jpg"
-      alt="seashells"
-      width="300"
-      height="300"
-      class="hero__image--one"
-    />
-    <img
-      src="./img/blake-alexander-BYDFN2KkGAQ-unsplash.jpg"
-      alt="seashells"
-      width="300"
-      height="300"
-      class="hero__image--one"
-    />
-    <img
-      src="./img/thomas-martinsen-CrnALaUMSA4-unsplash.jpg"
-      alt="travelgear"
-      width="300"
-      height="300"
-      class="hero__image--two"
-    />
-    <img
-      src="./img/thomas-martinsen-CrnALaUMSA4-unsplash.jpg"
-      alt="travelgear"
-      width="300"
-      height="300"
-      class="hero__image--two"
-    />
-    <img
-      src="./img/moujahed-jouini-OEh9R2Q62Xs-unsplash.jpg"
-      alt="bags"
-      width="300"
-      height="300"
-      class="hero__image--three"
-    />
+  <div class="hero__gallery full-width">
+    <div class="flex">
+      <div class="hero__gallery--item">
+        <img src="./img/blake-alexander-BYDFN2KkGAQ-unsplash.jpg" alt="">
+      </div>
+      <div class="hero__gallery--item">
+       <img src="./img/mandy-henry-2Jjx-btuiMY-unsplash.jpg" alt="">
+      </div>
+      <div class="hero__gallery--item">
+        <img src="./img/moujahed-jouini-OEh9R2Q62Xs-unsplash.jpg" alt="">
+      </div>
+      <div class="hero__gallery--item">
+       <img src="./img/thomas-martinsen-CrnALaUMSA4-unsplash.jpg" alt="">
+      </div>
+      <div class="hero__gallery--item">
+       <img src="./img/rirri-p_swqcXUc1k-unsplash.jpg" alt="">
+      </div>
+      <div class="hero__gallery--item">
+       <img src="./img/sergio-arteaga-fWWZxWe3cEU-unsplash.jpg" alt="">
+      </div>
+      <div class="hero__gallery--item">
+       7
+      </div>
+      <div class="hero__gallery--item">
+       8
+      </div>
+    </div>
   </div>
 </section>
 <section class="posts full-width content-grid">
-  <h1 class="title">Latest Posts</h1>
+  <h1 class="flow">Latest Posts</h1>
   <div class="flex content-grid">
     {%- for post in posts %}
     <article class="post">
@@ -77,7 +68,7 @@ pagination:
   </div>
 </section>
 <section class="links">
-  <h1 class="title">Recent Links</h1>
+  <h1 class="flow">Recent Links</h1>
   <div class="flex content-grid">
     {%- for link in links %}
     <div class="links">
@@ -89,4 +80,7 @@ pagination:
     {% endfor -%}
   </div>
   <a href="/links" class="accent">Get All Links</a>
+</section>
+<section>
+  {{ collections.recentLinks | debugger }}
 </section>
