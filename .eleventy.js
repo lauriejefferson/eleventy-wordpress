@@ -29,12 +29,8 @@ module.exports = (eleventyConfig) => {
     return collection.getFilteredByTag('posts').reverse().slice(0, 3);
   });
 
-  eleventyConfig.addCollection('recentLinks', function (collection) {
-    return collection.getFilteredByTag('links').reverse().slice(0, 3);
-  });
-
-  eleventyConfig.addFilter('debugger', function (jsonData) {
-    console.log(jsonData);
+  eleventyConfig.addFilter('recentLinks', function (links) {
+    console.log(links.reverse().slice(0, 3));
   });
 
   eleventyConfig.addFilter('dump', (obj) => {

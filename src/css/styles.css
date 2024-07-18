@@ -276,7 +276,7 @@ h1 {
     justify-content: center;
     scroll-snap-align: center;
     inline-size: 100%;
-    max-inline-size: 20rem;
+    max-inline-size: 25rem;
     aspect-ratio: 16/9;
     overflow: hidden;
 }

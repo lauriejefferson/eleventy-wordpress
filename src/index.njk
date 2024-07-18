@@ -31,10 +31,10 @@ pagination:
        <img src="./img/thomas-martinsen-CrnALaUMSA4-unsplash.jpg" alt="">
       </div>
       <div class="hero__gallery--item">
-       <img src="./img/rirri-p_swqcXUc1k-unsplash.jpg" alt="">
+       <img src="./img/John-15-11-KJV-These-things-have-I-spoken-unto-you-that-my-joy-I43015011-L02-82360877.jpg" alt="">
       </div>
       <div class="hero__gallery--item">
-       <img src="./img/sergio-arteaga-fWWZxWe3cEU-unsplash.jpg" alt="">
+       <img src="./img/naassom-azevedo-AcWC8WuCQ_k-unsplash.jpg" alt="">
       </div>
       <div class="hero__gallery--item">
        <img src="./img/lars-kuczynski-MEcR55ol3jM-unsplash.jpg" alt="">
@@ -70,7 +70,7 @@ pagination:
 <section class="links">
   <h1 class="flow">Recent Links</h1>
   <div class="flex content-grid">
-    {%- for link in links %}
+    {%- for link in links | reverse %}
     <div class="links">
       <h2 class="links__item">
         <a href="{{ link.url | url }}" class="accent">{{ link.title }}</a>
@@ -82,5 +82,5 @@ pagination:
   <a href="/links" class="accent">Get All Links</a>
 </section>
 <section>
-  {{ collections.recentLinks | debugger }}
+  {{ links | recentLinks }}
 </section>
