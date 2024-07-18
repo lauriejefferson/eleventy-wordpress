@@ -62,12 +62,12 @@ li {
 
 :root {
     --clr-body-background: #272225;
-    --clr-hero-backaground: #026372;
-    --clr-text: #F8F7F4;
-    --clr-photo-background: #ffffff;
-    --clr-accent: var(--orange-8);
+    --clr-text: var(--sand-0);
+    --clr-accent: var(--orange-4);
     --clr-tag: var(--orange-4);
     --clr-tag-text: var(--orange-11);
+    --clr--footer: var(--cyan-11);
+
 
     --ff-body: "Poppins", sans-serif;
     --ff-heading: "Abril Fatface", serif;
@@ -115,7 +115,7 @@ body {
     display: grid;
     grid-template-rows: auto 1fr auto;
     line-height: 1.6;
-    background-color: var(--clr-body-background);
+    background: var(--clr-body-background);
     color: var(--clr-text);
     font-family: var(--ff-body);
     font-weight: var(--fw-400);
@@ -149,7 +149,6 @@ h1 {
     font-weight: var(--fw-500);
 
 }
-
 
 .content-grid,
 .full-width {
@@ -235,7 +234,6 @@ h1 {
 
 .hero {
     padding: var(--section-spacing) 0;
-    /* background: var(--clr-hero-backaground); */
     line-height: 1.8;
     overflow-x: clip;
     overflow-y: visible;
@@ -280,10 +278,8 @@ h1 {
     inline-size: 100%;
     max-inline-size: 20rem;
     aspect-ratio: 16/9;
-    background-color: aquamarine;
     overflow: hidden;
 }
-
 
 
 .title {
@@ -303,6 +299,7 @@ h1 {
 
 .posts {
     padding-block: var(--section-spacing);
+
 }
 
 .post {
@@ -314,7 +311,6 @@ h1 {
     margin-block: 1em;
 }
 
-/* .post__title {} */
 
 .post__link {
     font-size: var(--fs-post-title);
@@ -357,9 +353,8 @@ h1 {
 }
 
 
-
-
 footer {
+    background-color: var(--clr--footer);
     padding: var(--article-spacing) 0;
     font-size: var(--fs-footer);
 }
@@ -376,7 +371,6 @@ footer {
     display: flex;
     gap: 1em;
 }
-
 
 
 @media (width < 800px) {
