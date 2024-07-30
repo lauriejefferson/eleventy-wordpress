@@ -1,7 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import "https://unpkg.com/open-props";
 
+:root {
+    --clr-body-background: #272225;
+    --clr-text: var(--sand-0);
+    --clr-accent: var(--orange-4);
+    --clr-tag: var(--orange-4);
+    --clr-tag-text: var(--orange-11);
+    --clr--footer: var(--cyan-11);
 
+    --ff-body: "Poppins", sans-serif;
+    --ff-heading: "Abril Fatface", serif;
+    --ff-stye-normal: 'normal';
+
+    --fs-200: clamp(0.535rem, 0.7928rem + 0.2029vw, 0.75rem);
+    --fs-300: clamp(0.8333rem, 0.7928rem + 0.2029vw, 0.95rem);
+    --fs-400: clamp(1rem, 0.9348rem + 0.3261vw, 1.183rem);
+    --fs-500: clamp(1.3rem, 1.2955rem + 0.7226vw, 1.6175rem);
+    --fs-600: clamp(1.728rem, 1.5223rem + 1.0284vw, 2.3193rem);
+    --fs-700: clamp(2.0736rem, 1.7864rem + 1.4358vw, 2.8992rem);
+    --fs-800: clamp(2.4883rem, 2.0933rem + 1.975vw, 3.624rem);
+
+    --fs-title: clamp(1.75rem, 0.5303rem + 2.0202vw, 1.9rem);
+    --fs-body: var(--fs-400);
+    --fs-date: var(--fs-200);
+    --fs-logo: var(--fs-500);
+    --fs-hero-title: var(--fs-800);
+    --fs-post-title: var(--fs-500);
+    --fs-article-title: var(--fs-700);
+    --fs-tag: 1.125rem;
+    --fs-footer: var(--fs-300);
+
+    --fw-200: 200;
+    --fw-300: 300;
+    --fw-400: 400;
+    --fw-500: 500;
+    --fw-600: 600;
+    --fw-700: 700;
+    --fw-800: 800;
+    --fw-900: 900;
+
+    --hero-spacing: 3rem;
+    --section-spacing: 5rem;
+    --links-section-spacing: 2rem;
+    --links-spacing: 1.5rem;
+    --article-spacing: 3rem;
+    --flow: 1rem;
+    --p-max-width: 85%;
+    --margin-spacing: 0.5em;
+
+}
+
+/* RESETS */
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -59,58 +109,7 @@ li {
     text-wrap: pretty;
 }
 
-
-:root {
-    --clr-body-background: #272225;
-    --clr-text: var(--sand-0);
-    --clr-accent: var(--orange-4);
-    --clr-tag: var(--orange-4);
-    --clr-tag-text: var(--orange-11);
-    --clr--footer: var(--cyan-11);
-
-
-    --ff-body: "Poppins", sans-serif;
-    --ff-heading: "Abril Fatface", serif;
-    --ff-stye-normal: 'normal';
-
-    --fs-200: clamp(0.535rem, 0.7928rem + 0.2029vw, 0.75rem);
-    --fs-300: clamp(0.8333rem, 0.7928rem + 0.2029vw, 0.95rem);
-    --fs-400: clamp(1rem, 0.9348rem + 0.3261vw, 1.183rem);
-    --fs-500: clamp(1.3rem, 1.2955rem + 0.7226vw, 1.6175rem);
-    --fs-600: clamp(1.728rem, 1.5223rem + 1.0284vw, 2.3193rem);
-    --fs-700: clamp(2.0736rem, 1.7864rem + 1.4358vw, 2.8992rem);
-    --fs-800: clamp(2.4883rem, 2.0933rem + 1.975vw, 3.624rem);
-
-    --fs-title: clamp(1.75rem, 0.5303rem + 2.0202vw, 1.9rem);
-    --fs-body: var(--fs-400);
-    --fs-date: var(--fs-200);
-    --fs-logo: var(--fs-500);
-    --fs-hero-title: var(--fs-800);
-    --fs-post-title: var(--fs-500);
-    --fs-article-title: var(--fs-700);
-    --fs-tag: 1.125rem;
-    --fs-footer: var(--fs-300);
-
-    --fw-200: 200;
-    --fw-300: 300;
-    --fw-400: 400;
-    --fw-500: 500;
-    --fw-600: 600;
-    --fw-700: 700;
-    --fw-800: 800;
-    --fw-900: 900;
-
-    --hero-spacing: 3rem;
-    --section-spacing: 7rem;
-    --links-section-spacing: 2rem;
-    --links-spacing: 1.5rem;
-    --article-spacing: 3rem;
-    --flow: 1rem;
-    --p-max-width: 85%;
-    --margin-spacing: 0.5em;
-
-}
-
+/* STYLES */
 body {
     display: grid;
     grid-template-rows: auto 1fr auto;
@@ -120,11 +119,6 @@ body {
     font-family: var(--ff-body);
     font-weight: var(--fw-400);
     font-size: var(--fs-body);
-}
-
-
-.flow>*+* {
-    padding-block: var(--flow);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -144,9 +138,14 @@ article {
 }
 
 h1 {
-    --flow: 1.5rem;
+    --flow-space: 1.5rem;
     font-size: var(--fs-hero-title);
     font-weight: var(--fw-500);
+
+}
+
+h2 {
+    --flow-space: 1.2rem;
 
 }
 
@@ -179,6 +178,10 @@ h1 {
 .flex-col {
     display: flex;
     flex-direction: column;
+}
+
+.flow>*+* {
+    padding-block: var(--flow);
 }
 
 .logo {
