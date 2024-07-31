@@ -158,6 +158,10 @@ h3 {
     font-size: var(--fs-heading-3);
 }
 
+h4 {
+    --flow-space: 1rem;
+}
+
 div {
     --flow-space: 1.7rem;
 }
@@ -316,20 +320,8 @@ a {
     overflow: hidden;
 }
 
-
-.title {
-    font-family: var(--ff-heading);
-    font-size: var(--fs-title);
-    width: max-content;
-}
-
 .page {
     padding-block: var(--article-spacing);
-}
-
-.page__title {
-    font-family: var(--ff-heading);
-    font-size: var(--fs-hero-title);
 }
 
 
