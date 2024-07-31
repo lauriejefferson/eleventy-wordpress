@@ -55,7 +55,7 @@
     --links-spacing: 1.5rem;
     --article-spacing: 3rem;
     --flow: 1rem;
-    --p-max-width: 85%;
+    --p-max-width: 55ch;
     --margin-spacing: 0.5em;
 
 }
@@ -114,7 +114,7 @@ a {
 /* prevent orphans in supported browsers */
 p,
 li {
-    max-width: var(--p-max-width, 120ch);
+    max-width: var(--p-max-width, 65ch);
     text-wrap: pretty;
 }
 
@@ -135,11 +135,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 section {
-    --flow-space: 7rem
+    --flow-space: 5rem
 }
 
 article {
-    --flow-space: 5rem
+    --flow-space: 3rem
 }
 
 h1 {
@@ -150,10 +150,12 @@ h1 {
 
 h2 {
     --flow-space: 1.5rem;
+    font-size: var(--fs-heading-2);
 }
 
 h3 {
     --flow-space: 1.125rem;
+    font-size: var(--fs-heading-3);
 }
 
 div {
@@ -174,6 +176,10 @@ small {
 
 a {
     color: var(--clr-text);
+}
+
+.flow {
+    padding-block: var(--flow-space, 1rem);
 }
 
 .flow>*+* {
@@ -331,25 +337,17 @@ a {
     margin-block: 1em;
 }
 
-
-.post__link {
-    font-size: var(--fs-post-title);
-}
-
 .post__tags {
     display: flex;
     align-items: center;
     gap: 1em;
 }
 
-
 .links__text {
     margin-block: var(--margin-spacing);
 }
 
 .links__item {
-    font-size: var(--fs-post-title);
-    text-wrap: nowrap;
     margin-right: 1.5em;
 }
 

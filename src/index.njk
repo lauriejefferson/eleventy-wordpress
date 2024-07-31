@@ -7,7 +7,7 @@ pagination:
   size: 3
 ---
 
-<section class="hero flow full-width content-grid">
+<section class="flow full-width content-grid">
     <h1 class="hero__title">Hi! I'm Laurie</h1>
     <p class="hero__text">
       Welcome to my digital collection. Here is where I share some random
@@ -45,25 +45,25 @@ pagination:
     </div>
   </div>
 </section>
-<section class="pinned flow full-width content-grid">
-  <h1>Pinned</h1>
+<section class="flow full-width content-grid">
+  <h2>Pinned</h2>
   <div class="post">
-    <h2 class="post__link"><a href="/">Pinned Post</a></h2>
+    <h3 class="post__link"><a href="/">Pinned Post</a></h3>
   </div>
   <div class="links">
-    <h2 class="links__item"><a href="/">Pinned Link</a></h2>
+    <h3 class="links__item"><a href="/">Pinned Link</a></h3>
   </div>
 </section>
-<section class="posts flow full-width content-grid">
-  <h1>Latest Posts</h1>
+<section class="flow full-width content-grid">
+  <h2>Latest Posts</h2>
   <div class="grid">
     {%- for post in posts %}
     <div class="post">
-      <h2 class="post__link">
+      <h3 class="post__link">
         <a href="/posts/{{ post.slug }}" class="accent">{{
           post.title.rendered
         }}</a>
-      </h2>
+      </h3>
       <p class="post__summary">{{ post.acf.summary }}</p>
       <small>{{ post.date | postDate }}</small>
       <div class="post__tags">
@@ -76,14 +76,14 @@ pagination:
     {% endfor -%}
 </div>
 </section>
-<section class="links flow full-width content-grid">
-  <h1>Recent Links</h1>
+<section class="flow full-width content-grid">
+  <h2>Recent Links</h2>
   <div class="grid">
     {%- for link in links | reverse %}
     <div class="links">
-      <h2 class="links__item">
+      <h3 class="links__item">
         <a href="{{ link.url | url }}" class="accent">{{ link.title }}</a>
-      </h2>
+      </h3>
       <p class="links__text">{{ link.description }}</p>
     </div>
     {% endfor -%}
