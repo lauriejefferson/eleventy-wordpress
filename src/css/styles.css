@@ -31,6 +31,15 @@
     --fs-tag: 1.125rem;
     --fs-footer: var(--fs-300);
 
+    --fs-hero: var(--fs-800);
+    --fs-heading-1: var(--fs-700);
+    --fs-heading-2: var(--fs-600);
+    --fs-heading-3: var(--fs-500);
+    --fs-heading-4: var(--fs-400);
+    --fs-heading-5: var(--fs-300);
+    --fs-heading-6: var(--fs-200);
+    --fs-text: var(--fs-400);
+
     --fw-200: 200;
     --fw-300: 300;
     --fw-400: 400;
@@ -113,40 +122,62 @@ li {
 body {
     display: grid;
     grid-template-rows: auto 1fr auto;
-    line-height: 1.6;
     background: var(--clr-body-background);
     color: var(--clr-text);
     font-family: var(--ff-body);
     font-weight: var(--fw-400);
-    font-size: var(--fs-body);
+    font-size: var(--fs-text);
+    line-height: 1.6;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--ff-heading);
 }
 
-a {
-    color: var(--clr-text);
+section {
+    --flow-space: 7rem
+}
+
+article {
+    --flow-space: 5rem
+}
+
+h1 {
+    --flow-space: 1.5rem;
+    font-size: var(--fs-heading-1);
+    font-weight: var(--fw-500);
+}
+
+h2 {
+    --flow-space: 1.5rem;
+}
+
+h3 {
+    --flow-space: 1.125rem;
+}
+
+div {
+    --flow-space: 1.7rem;
+}
+
+p {
+    --flow-space: 1rem;
+}
+
+p+div {
+    --flow-space: 1.125rem;
 }
 
 small {
     font-size: var(--fs-300);
 }
 
-article {
-    --flow: 1rem;
+a {
+    color: var(--clr-text);
 }
 
-h1 {
-    --flow-space: 1.5rem;
-    font-size: var(--fs-hero-title);
-    font-weight: var(--fw-500);
-
-}
-
-h2 {
-    --flow-space: 1.2rem;
-
+.flow>*+* {
+    padding-block: var(--flow-space, 1rem);
 }
 
 .content-grid,
@@ -180,12 +211,14 @@ h2 {
     flex-direction: column;
 }
 
-.flow>*+* {
-    padding-block: var(--flow);
+.grid {
+    display: grid;
+    place-items: start;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1em;
 }
 
 .logo {
-    font-family: var(--ff-heading);
     font-size: var(--fs-logo);
     color: var(--clr-text);
     width: 15ch;
@@ -243,14 +276,7 @@ h2 {
 }
 
 .hero__title {
-    font-family: var(--ff-heading);
     font-size: var(--fs-hero-title);
-    margin-bottom: 0.5em;
-}
-
-.hero__text {
-    width: 78ch;
-    margin-bottom: 2em;
 }
 
 .hero__intro {
@@ -300,15 +326,6 @@ h2 {
     font-size: var(--fs-hero-title);
 }
 
-.posts {
-    padding-block: var(--section-spacing);
-
-}
-
-.post {
-    padding-block: var(--article-spacing);
-}
-
 
 .post__summary {
     margin-block: 1em;
@@ -325,18 +342,9 @@ h2 {
     gap: 1em;
 }
 
-.links {
-    padding: var(--links-section-spacing) 0;
-    width: fit-content;
-
-}
 
 .links__text {
     margin-block: var(--margin-spacing);
-}
-
-.link {
-    font-size: var(--fs-post-title);
 }
 
 .links__item {

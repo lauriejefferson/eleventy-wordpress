@@ -7,7 +7,7 @@ pagination:
   size: 3
 ---
 
-<section class="hero full-width content-grid">
+<section class="hero flow full-width content-grid">
     <h1 class="hero__title">Hi! I'm Laurie</h1>
     <p class="hero__text">
       Welcome to my digital collection. Here is where I share some random
@@ -45,20 +45,20 @@ pagination:
     </div>
   </div>
 </section>
-<section class="posts full-width content-grid">
-  <h1 class="flow">Pinned</h1>
-  <article class="post">
-    <h2 class="post__link">Pinned Post</h2>
-  </article>
-  <article class="links">
-    <h2 class="links__item">Pinned Link</h2>
-  </article>
+<section class="pinned flow full-width content-grid">
+  <h1>Pinned</h1>
+  <div class="post">
+    <h2 class="post__link"><a href="/">Pinned Post</a></h2>
+  </div>
+  <div class="links">
+    <h2 class="links__item"><a href="/">Pinned Link</a></h2>
+  </div>
 </section>
-<section class="posts full-width content-grid">
-  <h1 class="flow">Latest Posts</h1>
-  <div class="flex content-grid">
+<section class="posts flow full-width content-grid">
+  <h1>Latest Posts</h1>
+  <div class="grid">
     {%- for post in posts %}
-    <article class="post">
+    <div class="post">
       <h2 class="post__link">
         <a href="/posts/{{ post.slug }}" class="accent">{{
           post.title.rendered
@@ -72,13 +72,13 @@ pagination:
         <a class="tag">{{ tagName.name }}</a>
         {% endif %} {% endfor -%} {% endfor -%}
       </div>
-    </article>
+    </div>
     {% endfor -%}
-  </div>
+</div>
 </section>
-<section class="links">
-  <h1 class="flow">Recent Links</h1>
-  <div class="flex content-grid">
+<section class="links flow full-width content-grid">
+  <h1>Recent Links</h1>
+  <div class="grid">
     {%- for link in links | reverse %}
     <div class="links">
       <h2 class="links__item">
@@ -88,8 +88,8 @@ pagination:
     </div>
     {% endfor -%}
   </div>
-  <a href="/links" class="accent">Get All Links</a>
+  <a href="/links">Get All Links</a>
 </section>
-<section>
+{# <section>
   {{ links | recentLinks }}
-</section>
+</section> #}
