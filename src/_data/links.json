@@ -1,16 +1,19 @@
 [
     {
         "title": "Eleventy",
+        "slug": "link-one",
         "url": "https://11ty.dev",
         "description": "Easy to use static site generator used to build my digital collection website"
     },
     {
         "title": "Dana Byerly's Junk Drawer",
+        "slug": "link-two",
         "url": "https://danabyerly-junkdrawer.website/",
         "description": "Credit for the idea of creating my own digital junk drawer blog."
     },
     {
         "title": "The Lady Victory",
+        "slug": "link-three",
         "url": "https://theladyvictory.com/",
         "description": "If you want to be a real Born Again Christian and know the True Hebrew Messiah Yahshua, read her books!"
     }

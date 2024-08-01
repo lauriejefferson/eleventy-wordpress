@@ -8,10 +8,10 @@ pagination:
   alias: postsPage
   reverse: true
 ---
-<div class="container">
-    <h1 class="flow">{{ title }}</h1>
+<section class="flow">
+    <h1>{{ title }}</h1>
     {%- for post in postsPage %}
-    <article class="post flex-col">
+    <div class="posts" >
       <h2 class="post__link">
 <a href="{{ post.slug }}/" class="accent"
         >{{ post.title.rendered }}
@@ -28,6 +28,6 @@ pagination:
           {% endfor -%}
       {% endfor -%}
       </div>
-    </article>
+    </div>
     {% endfor -%}
-</div>
+</section>

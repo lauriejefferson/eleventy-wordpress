@@ -5,7 +5,7 @@ title: 'Links'
 tags: 'links'
 ---
 {% block content %}
-<article class="page">
+<section class="page flow">
   <h1 class="page__title">{{ title }}</h1>
   {% for link in links %}
   <div class="links">
@@ -15,5 +15,5 @@ tags: 'links'
     <p class="links__text">{{ link.description }}</p>
   </div>
   {% endfor %}
-</article>
+</section>
 {% endblock %}
