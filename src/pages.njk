@@ -8,7 +8,11 @@ pagination:
 permalink: '/{{ pages.slug | slugify }}/index.html'
 tags: 'pages'
 ---
-<section class="page flow full-width content-grid">
-  <h1 class="title">{{ pages.title.rendered }}</h1>
+{% block content %}
+<section class="flow full-width content-grid">
+  <div class="page">
+    <h1 class="title">{{ pages.title.rendered }}</h1>
   {{ pages.content.rendered | safe }}
+  </div>
 </section>
+{% endblock %}

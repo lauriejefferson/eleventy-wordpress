@@ -279,7 +279,6 @@ a {
 }
 
 .hero {
-    padding: var(--section-spacing) 0;
     line-height: 1.8;
     overflow-x: clip;
     overflow-y: visible;
