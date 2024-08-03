@@ -7,7 +7,7 @@ tags: 'links'
 {% block content %}
 <section class="page flow">
   <h1>{{ title }}</h1>
-  {% for link in links %}
+  {% for link in links | reverse %}
   <div class="links">
     <h2 class="link">
       <a href="{{ link.url | url }}" class="accent">{{ link.title }}</a>

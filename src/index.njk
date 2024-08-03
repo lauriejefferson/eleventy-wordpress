@@ -46,12 +46,17 @@ pagination:
   </div>
 </section>
 <section class="pinned flow full-width content-grid">
-  <h2>Pinned</h2>
+  {% set featuredLink = links.reverse().slice(0,1) %}
+  {% set featuredPost = posts.reverse().slice(0,1) %}
+
+  <h2>Featured</h2>
   <div class="post">
-    <h3 class="post__link"><a href="/" class="accent">Pinned Post</a></h3>
+    <h3 class="post__link"><a href="/" class="accent">{{ featuredPost[0].title.rendered }}</a></h3>
+    <p>{{ featuredPost[0].acf.summary | safe }}</p>
   </div>
   <div class="links">
-    <h3 class="links__item"><a href="/" class="accent">Pinned Link</a></h3>
+    <h3 class="links__item"><a href="/" class="accent">{{ featuredLink[0].title}}</a></h3>
+    <p>{{featuredLink[0].description}}</p>
   </div>
 </section>
 <section class="posts flow full-width content-grid">
@@ -92,5 +97,5 @@ pagination:
   
 </section>
 {# <section>
-  {{ links | recentLinks }}
+  {{ links | featuredLinks | log }}
 </section> #}

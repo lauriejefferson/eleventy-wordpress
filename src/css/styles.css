@@ -288,10 +288,7 @@ a {
     font-size: var(--fs-hero-title);
 }
 
-.hero__intro {
-    padding-block: var(--flow);
-    width: 70%;
-}
+/* Hero gallery styles from Ryan Mulligan's blog */
 
 .hero__gallery {
     display: grid;
@@ -318,6 +315,7 @@ a {
     aspect-ratio: 16/9;
     overflow: hidden;
 }
+
 
 .post__summary {
     margin-block: 1em;
@@ -347,10 +345,9 @@ a {
     font-size: var(--fs-300);
 }
 
-
 footer {
+    --flow-space: 3rem;
     background-color: var(--clr--footer);
-    padding: var(--article-spacing) 0;
     font-size: var(--fs-footer);
 }
 
@@ -377,10 +374,9 @@ footer {
 
     .nav {
         justify-content: flex-start;
-
     }
 
-    .tags-container {
+    .tags {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
@@ -397,7 +393,7 @@ footer {
         gap: 1em;
     }
 
-    .tags-container {
+    .tags {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
@@ -405,4 +401,21 @@ footer {
         padding-block: 1em;
     }
 
+}
+
+.hero__gallery {
+    container-name: hero-gallery;
+    container-type: inline-size;
+}
+
+footer {
+    container-name: footer;
+    container-type: inline-size;
+}
+
+@container footer (min-width: 800px) {
+    .footer-container {
+        display: flex;
+        place-content: center;
+    }
 }

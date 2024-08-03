@@ -25,13 +25,17 @@ module.exports = (eleventyConfig) => {
     return collection.getAll().filter((item) => item.data.posts);
   });
 
+  eleventyConfig.addCollection('featuredPosts', function (collection) {
+    return collection.getFilteredByTag('posts').reverse().slice(0, 1);
+  });
+
   eleventyConfig.addCollection('recentPosts', function (collection) {
     return collection.getFilteredByTag('posts').reverse().slice(0, 3);
   });
 
-  eleventyConfig.addFilter('recentLinks', function (links) {
-    console.log(links.reverse().slice(0, 3));
-  });
+  // eleventyConfig.addFilter('recentLinks', function (links) {
+  //   return collections.links.reverse().slice(0, 3);
+  // });
 
   eleventyConfig.addFilter('dump', (obj) => {
     return util.inspect(obj);
