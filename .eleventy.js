@@ -25,10 +25,6 @@ module.exports = (eleventyConfig) => {
     return collection.getAll().filter((item) => item.data.posts);
   });
 
-  eleventyConfig.addCollection('featuredPosts', function (collection) {
-    return collection.getFilteredByTag('posts').reverse().slice(0, 1);
-  });
-
   eleventyConfig.addCollection('recentPosts', function (collection) {
     return collection.getFilteredByTag('posts').reverse().slice(0, 3);
   });

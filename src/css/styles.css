@@ -298,6 +298,11 @@ a {
     scrollbar-width: none;
 }
 
+.hero__gallery .hero__gallery--flex {
+    display: flex;
+    gap: 1em;
+}
+
 .hero__gallery .flex::after {
     content: "";
     align-self: stretch;
@@ -403,8 +408,8 @@ footer {
 
 }
 
-.hero__gallery {
-    container-name: hero-gallery;
+.featured {
+    container-name: featured;
     container-type: inline-size;
 }
 
@@ -417,5 +422,13 @@ footer {
     .footer-container {
         display: flex;
         place-content: center;
+    }
+}
+
+@container featured (min-width: 800px) {
+    .featured-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 1.2em;
     }
 }

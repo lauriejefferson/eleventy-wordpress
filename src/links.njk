@@ -2,12 +2,17 @@
 layout: default.njk
 eleventyExcludeFromCollections: true
 title: 'Links'
+pagination:
+  data: links
+  size: 5
+  alias: linksPage
+  reverse: true
 tags: 'links'
 ---
 {% block content %}
 <section class="page flow">
   <h1>{{ title }}</h1>
-  {% for link in links | reverse %}
+  {% for link in linksPage | reverse %}
   <div class="links">
     <h2 class="link">
       <a href="{{ link.url | url }}" class="accent">{{ link.title }}</a>
