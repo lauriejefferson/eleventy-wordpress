@@ -303,7 +303,7 @@ a {
     gap: 1em;
 }
 
-.hero__gallery .flex::after {
+.hero__gallery .hero__gallery--flex::after {
     content: "";
     align-self: stretch;
     padding-inline-end: max(2rem, (100vw - 75ch)/2 - 2rem)
@@ -326,11 +326,11 @@ a {
     margin-block: 1em;
 }
 
-.post__tags {
+/* .post__tags {
     display: flex;
     align-items: center;
     gap: 1em;
-}
+} */
 
 .links__text {
     margin-block: var(--margin-spacing);
