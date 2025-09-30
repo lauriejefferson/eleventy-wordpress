@@ -168,11 +168,13 @@ div {
 
 p {
     --flow-space: 1rem;
+    --p-max-width: 100ch;
 }
 
 p+div {
     --flow-space: 1.125rem;
 }
+
 
 small {
     font-size: var(--fs-300);
@@ -189,6 +191,8 @@ a {
 .flow>*+* {
     padding-block: var(--flow-space, 1rem);
 }
+
+
 
 .content-grid,
 .full-width {
